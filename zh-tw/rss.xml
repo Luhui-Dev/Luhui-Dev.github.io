@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (zh-tw)</title>
+<link>https://luhuidev.com/zh-tw</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[HKU CodePlot-CoT 深度解析：視覺推理還是幾何推理？]]></title>
+<link>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從可執行繪圖到幾何證明，分析 CodePlot-CoT 的優勢與結構性邊界。]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (en)</title>
+<link>https://luhuidev.com/en</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[HKU CodePlot-CoT Deep Dive: Visual Reasoning or Geometric Reasoning?]]></title>
+<link>https://luhuidev.com/en/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/en/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[From executable plotting to geometric proof, a structural analysis of CodePlot-CoT's strengths and boundaries.]]></description>
+</item>
+</channel>
+</rss>
