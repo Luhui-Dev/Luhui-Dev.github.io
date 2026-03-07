@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (zh-tw)</title>
+<link>https://luhuidev.com/zh-tw</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解]]></title>
+<link>https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide</link>
+<guid>https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide</guid>
+<pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。]]></description>
+</item>
+<item>
+<title><![CDATA[AlphaGeometry2 深度解析：Google AI 如何解決 IMO 幾何題？]]></title>
+<link>https://luhuidev.com/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems</link>
+<guid>https://luhuidev.com/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems</guid>
+<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 AlphaGeometry2 如何把幾何推理、輔助線搜尋與符號證明結合起來解決 IMO 幾何題，並整理對數學 AI 工程的啟發。]]></description>
+</item>
+<item>
+<title><![CDATA[Google DeepMind Aletheia：完全自主研究的數學 Agent 解讀]]></title>
+<link>https://luhuidev.com/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent</link>
+<guid>https://luhuidev.com/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent</guid>
+<pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從 AlphaGo 到 AlphaGeometry、AlphaProof，再到 Aletheia，拆解可驗證數學研究閉環的工程價值。]]></description>
+</item>
+<item>
+<title><![CDATA[HKU CodePlot-CoT 深度解析：視覺推理還是幾何推理？]]></title>
+<link>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從可執行繪圖到幾何證明，分析 CodePlot-CoT 的優勢與結構性邊界。]]></description>
+</item>
+<item>
+<title><![CDATA[AI 與數學的融合：技術路徑、應用前沿與未來展望（2026 版）]]></title>
+<link>https://luhuidev.com/zh-tw/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</link>
+<guid>https://luhuidev.com/zh-tw/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</guid>
+<pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從基準可信度、模型能力分層到架構型數學系統，梳理 AI for Math 在 2026 年的關鍵進展與產品機會。]]></description>
+</item>
+</channel>
+</rss>

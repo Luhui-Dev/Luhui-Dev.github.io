@@ -1,0 +1,347 @@
+<!DOCTYPE html><!--s6U5OGQX2k1nKKp9lxbrS--><html lang="en" data-theme="forest-mint"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/62f349f6786803ea.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-0cfe6f51555ca84e.js"/><script src="/_next/static/chunks/87c73c54-24122e7b92478d00.js" async=""></script><script src="/_next/static/chunks/18-7a16b32c69016b48.js" async=""></script><script src="/_next/static/chunks/main-app-3b014f642fb436e9.js" async=""></script><script src="/_next/static/chunks/app/layout-bc433144c6eccffa.js" async=""></script><script src="/_next/static/chunks/app/not-found-6a873e9b606a9eb4.js" async=""></script><script src="/_next/static/chunks/664-6d821dc1aacb6b48.js" async=""></script><script src="/_next/static/chunks/463-c9f34cb9eb11a0dc.js" async=""></script><script src="/_next/static/chunks/app/%5Blocale%5D/layout-9a92a8bd2e2713d1.js" async=""></script><script src="/_next/static/chunks/app/%5Blocale%5D/essays/%5Bslug%5D/page-1b29c572d7a455a0.js" async=""></script><link rel="preload" href="/editorial-kit/assets/js/theme-presets.js" as="script"/><link rel="preload" href="/editorial-kit/assets/js/motion-reveal.js" as="script"/><title>AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解</title><meta name="description" content="系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。"/><meta name="keywords" content="LuhuiDev,AlphaGeometry DSL,Google AlphaGeometry,AlphaGeometry DSL 教程,幾何構造語言,幾何推理 DSL,defs.txt,predicate,rules.txt,幾何求解器,DDAR"/><link rel="canonical" href="https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide"/><link rel="alternate" hrefLang="en" href="https://luhuidev.com/en/essays/google-alphageometry-dsl-guide"/><link rel="alternate" hrefLang="zh-cn" href="https://luhuidev.com/zh-cn/essays/google-alphageometry-dsl-guide"/><link rel="alternate" hrefLang="zh-tw" href="https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide"/><link rel="alternate" hrefLang="es" href="https://luhuidev.com/es/essays/google-alphageometry-dsl-guide"/><link rel="alternate" hrefLang="x-default" href="https://luhuidev.com/en/essays/google-alphageometry-dsl-guide"/><meta property="og:title" content="AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解"/><meta property="og:description" content="系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。"/><meta property="og:url" content="https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide"/><meta property="og:site_name" content="Luhui Dev"/><meta property="og:locale" content="zh-tw"/><meta property="og:image" content="https://luhuidev.com/og-default.svg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Luhui Dev"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解"/><meta name="twitter:description" content="系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。"/><meta name="twitter:image" content="https://luhuidev.com/og-default.svg"/><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/><link rel="icon" href="/icon.png?8bcfac582abffbe1" type="image/png" sizes="512x512"/><link rel="stylesheet" href="/editorial-kit/assets/css/tokens.css"/><link rel="stylesheet" href="/editorial-kit/assets/css/foundation.css"/><link rel="stylesheet" href="/editorial-kit/assets/css/motion.css"/><script>(self.__next_s=self.__next_s||[]).push([0,{"children":"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NNJP6S5J');","id":"gtm-init"}])</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNJP6S5J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="page-wrap"><div class="page-shell ui-shell"><header class="site-header topbar" data-animate="topbar-in"><div class="container header-inner"><div class="header-brand"><div class="ui-dot" aria-hidden="true"></div><a class="brand" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_brand" data-analytics-param-cta-position="header" href="/zh-tw">Luhui Dev</a></div><nav class="site-nav" aria-label="Primary"><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_about" data-analytics-param-cta-position="header" href="/zh-tw/about">關於</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_products" data-analytics-param-cta-position="header" href="/zh-tw/products">產品</a><a href="https://ainews.luhuidev.com" target="_blank" rel="noopener noreferrer" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_weekly" data-analytics-param-cta-position="header">週刊</a><a class="active" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_essays" data-analytics-param-cta-position="header" href="/zh-tw/essays">文章</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_research" data-analytics-param-cta-position="header" href="/zh-tw/research">研究</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_collaborate" data-analytics-param-cta-position="header" href="/zh-tw/collaborate">合作</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="header_nav_contact" data-analytics-param-cta-position="header" href="/zh-tw/contact">聯絡</a></nav><div class="header-actions"><button type="button" class="mobile-menu-trigger " aria-label="選單" title="選單" aria-expanded="false" aria-controls="mobile-primary-nav" data-analytics-event="select_content" data-analytics-param-cta-name="mobile_menu_toggle" data-analytics-param-cta-position="header"><span></span><span></span><span></span></button><details class="locale-switcher lang"><summary class="locale-trigger" aria-label="語言" title="語言"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M3.5 12h17M12 3.5c2.5 2.5 3.8 5.5 3.8 8.5S14.5 18 12 20.5M12 3.5C9.5 6 8.2 9 8.2 12s1.3 6 3.8 8.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg></summary><div class="locale-list" aria-label="語言"><a class="" data-analytics-event="select_content" data-analytics-param-cta-name="locale_switch_en" data-analytics-param-cta-position="header_locale" href="/en/essays/google-alphageometry-dsl-guide">English</a><a class="" data-analytics-event="select_content" data-analytics-param-cta-name="locale_switch_zh-cn" data-analytics-param-cta-position="header_locale" href="/zh-cn/essays/google-alphageometry-dsl-guide">简体中文</a><a class="active" data-analytics-event="select_content" data-analytics-param-cta-name="locale_switch_zh-tw" data-analytics-param-cta-position="header_locale" href="/zh-tw/essays/google-alphageometry-dsl-guide">繁體中文</a><a class="" data-analytics-event="select_content" data-analytics-param-cta-name="locale_switch_es" data-analytics-param-cta-position="header_locale" href="/es/essays/google-alphageometry-dsl-guide">Español</a></div></details></div></div><div id="mobile-primary-nav" class="container mobile-nav-panel " aria-hidden="true"><nav class="mobile-nav" aria-label="Primary"><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_about" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/about">關於</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_products" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/products">產品</a><a href="https://ainews.luhuidev.com" target="_blank" rel="noopener noreferrer" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_weekly" data-analytics-param-cta-position="mobile_nav">週刊</a><a class="active" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_essays" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/essays">文章</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_research" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/research">研究</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_collaborate" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/collaborate">合作</a><a class="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="mobile_nav_contact" data-analytics-param-cta-position="mobile_nav" href="/zh-tw/contact">聯絡</a></nav></div></header><main class="container"><section class="detail-page" data-motion="section"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解","description":"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。","datePublished":"2026-03-08","dateModified":"2026-03-08","author":{"@type":"Person","name":"Luhui Dev"},"inLanguage":"zh-tw","mainEntityOfPage":"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://luhuidev.com/zh-tw"},{"@type":"ListItem","position":2,"name":"Essays","item":"https://luhuidev.com/zh-tw/essays"},{"@type":"ListItem","position":3,"name":"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解","item":"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解","description":"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。","url":"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide","inLanguage":"zh-tw","isPartOf":{"@type":"WebSite","name":"Luhui Dev","url":"https://luhuidev.com/zh-tw"}}</script><h1 class="page-title" data-motion-item="">AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解</h1><div class="detail-meta" data-motion-item=""><p class="micro detail-meta-item"><span class="detail-meta-label">主題<!-- -->:</span> <a class="detail-theme-link" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="essay_theme_ai-for-math" data-analytics-param-cta-position="essay_detail_meta" data-analytics-param-content_type="essay_theme" data-analytics-param-theme_slug="ai-for-math" href="/zh-tw/essays/theme/ai-for-math">AI for Math</a></p><p class="micro detail-meta-item"><span class="detail-meta-label">發布日期<!-- -->:</span> <time dateTime="2026-03-08">2026年3月8日</time></p><p class="micro detail-meta-item"><span class="detail-meta-label">最後修改<!-- -->:</span> <time dateTime="2026-03-08">2026年3月8日</time></p></div><article class="mdx-prose" data-motion="section"><div class="mdx-prose-content" data-motion-item=""><p>本文僅討論 AlphaGeometry DSL 本身，不討論模型訓練、搜尋策略或論文結果。</p>
+<p>目標是把這套 DSL 當作一份面向研發的協議說明書來拆解，回答以下問題：</p>
+<ul>
+<li>問題輸入如何編碼</li>
+<li><code>defs.txt</code> 中 action 如何定義</li>
+<li>幾何關係如何映射為 predicate</li>
+<li>數值構造與符號推理如何銜接</li>
+</ul>
+<p>如果要復現 AlphaGeometry、編寫幾何資料生成器，或為自定義 solver 設計相容層，理解 DSL 協議是基礎前置工作。</p>
+<br/>
+<br/>
+<h2>一、DSL 的角色定義</h2>
+<p>AlphaGeometry DSL 是一套面向幾何構造與關係表達的領域語言。它主要承擔 3 個職責：</p>
+<ul>
+<li>表達初始幾何前提</li>
+<li>表達可執行的構造動作</li>
+<li>表達待驗證的幾何目標</li>
+</ul>
+<p>其輸出不是最終證明文本，而是可供推理引擎消費的幾何關係集合。</p>
+<p>從實作角度看，DSL 更接近一層中間表示：</p>
+<ul>
+<li>上游連接題目描述或資料生成器</li>
+<li>中游連接 action 定義與關係展開</li>
+<li>下游連接 <code>rules.txt</code> 與 DDAR 推理</li>
+</ul>
+<p>協議核心不在「圖形繪製」，而在「關係生成」。</p>
+<br/>
+<br/>
+<h2>二、問題檔案結構</h2>
+<p>一個完整問題通常寫成：</p>
+<pre><code class="language-txt">problem_name
+premises ? goal
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-txt">orthocenter
+a b c = triangle;
+h = on_tline b a c, on_tline c a b
+? perp a h b c
+</code></pre>
+<p>可以拆成 3 個區塊：</p>
+<ol>
+<li><code>a b c = triangle;</code>
+初始前提與自由對象</li>
+<li><code>h = on_tline b a c, on_tline c a b</code>
+基於已知對象執行構造</li>
+<li><code>? perp a h b c</code>
+目標 predicate</li>
+</ol>
+<p>這段 DSL 的含義不是自然語言題解，而是一段幾何程式：</p>
+<pre><code class="language-txt">Premises
+  -&gt; constructions
+  -&gt; predicate graph
+  -&gt; goal checking
+</code></pre>
+<p>解析後，系統通常需要產出：</p>
+<ul>
+<li>初始對象表</li>
+<li>action 呼叫序列</li>
+<li>predicate 初始集合</li>
+<li>待檢查目標</li>
+</ul>
+<br/>
+<br/>
+<h2>三、基本語法約定</h2>
+<p>DSL 的核心表達形式是：</p>
+<pre><code class="language-txt">output = action(parameters)
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-txt">h = on_tline b a c, on_tline c a b
+</code></pre>
+<p>表示點 <code>h</code> 同時滿足兩個構造約束：</p>
+<ul>
+<li>過 <code>b</code> 作直線，垂直於 <code>ac</code></li>
+<li>過 <code>c</code> 作直線，垂直於 <code>ab</code></li>
+</ul>
+<p>因此 <code>h</code> 是兩條垂線的交點。</p>
+<p>這類表達具有兩個特點：</p>
+<ul>
+<li>輸出變數統一使用點變數</li>
+<li>幾何對象透過點集隱式表示，而非獨立對象型別</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-txt">line a b
+circle o a
+</code></pre>
+<ul>
+<li><code>line a b</code> 表示由點 <code>a</code>、<code>b</code> 定義的直線</li>
+<li><code>circle o a</code> 表示圓心 <code>o</code>、經過點 <code>a</code> 的圓</li>
+</ul>
+<p>這種設計簡化了解析器與關係圖結構，但要求 predicate 系統足夠強，能覆蓋直線、圓與角的高層語義。</p>
+<br/>
+<br/>
+<h2>四、<code>defs.txt</code> 中 action 的定義結構</h2>
+<p><code>defs.txt</code> 是 action 註冊表。每個 action 通常由 5 個部分組成：</p>
+<pre><code class="language-txt">action_name outputs inputs
+
+variable dependency
+
+input conditions
+
+geometric constraints
+
+numerical constructions
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-txt">midpoint x a b
+x : a b
+a b = diff a b
+x : coll x a b, cong x a x b
+midp a b
+</code></pre>
+<p>各部分作用如下。</p>
+<h3>1. action 簽名</h3>
+<pre><code class="language-txt">midpoint x a b
+</code></pre>
+<p>表示：</p>
+<ul>
+<li>action 名稱為 <code>midpoint</code></li>
+<li>輸出點為 <code>x</code></li>
+<li>輸入點為 <code>a b</code></li>
+</ul>
+<h3>2. 變數依賴</h3>
+<pre><code class="language-txt">x : a b
+</code></pre>
+<p>表示輸出變數 <code>x</code> 依賴於輸入 <code>a</code>、<code>b</code>。</p>
+<p>這部分通常用於構造依賴圖或變數作用域管理。</p>
+<h3>3. 輸入合法性條件</h3>
+<pre><code class="language-txt">a b = diff a b
+</code></pre>
+<p>表示 <code>a</code> 和 <code>b</code> 必須是不同點。</p>
+<p>這一層用於阻止退化構造，不直接生成證明關係。</p>
+<br/>
+<br/>
+<h3>4. 幾何約束</h3>
+<pre><code class="language-txt">x : coll x a b, cong x a x b
+</code></pre>
+<p>表示 action 完成後必須成立的 predicate：</p>
+<ul>
+<li><code>coll x a b</code>，即 <code>x</code> 與 <code>a</code>、<code>b</code> 共線</li>
+<li><code>cong x a x b</code>，即 <code>XA = XB</code></li>
+</ul>
+<p>這部分是 action 的符號語義定義，也是後續推理系統消費的主要輸入。</p>
+<h3>5. 數值構造介面</h3>
+<pre><code class="language-txt">midp a b
+</code></pre>
+<p>表示底層數值引擎應呼叫中點構造。</p>
+<p>數值層的典型用途包括：</p>
+<ul>
+<li>生成具體座標實例</li>
+<li>檢查構造是否退化</li>
+<li>為 predicate 提供數值真值校驗</li>
+</ul>
+<br/>
+<br/>
+<h2>五、predicate 系統</h2>
+<p>predicate 是 AlphaGeometry 推理系統的核心輸入格式。</p>
+<p>常見核心謂詞包括：</p>
+<table><thead><tr><th>predicate</th><th>含義</th></tr></thead><tbody><tr><td><code>coll A B C</code></td><td>三點共線</td></tr><tr><td><code>cong A B C D</code></td><td><code>AB = CD</code></td></tr><tr><td><code>perp A B C D</code></td><td><code>AB ⟂ CD</code></td></tr><tr><td><code>para A B C D</code></td><td><code>AB ∥ CD</code></td></tr><tr><td><code>eqangle ...</code></td><td>角相等</td></tr><tr><td><code>cyclic A B C D</code></td><td>四點共圓</td></tr></tbody></table>
+<p>這些 predicate 會進入 <code>rules.txt</code> 所定義的規則系統，觸發進一步推導。</p>
+<p>典型流程如下：</p>
+<pre><code class="language-txt">construction
+  -&gt; initial predicates
+  -&gt; rule firing
+  -&gt; new predicates
+  -&gt; goal reached / not reached
+</code></pre>
+<p>因此 DSL 的核心不是動作目錄本身，而是 predicate 生成能力。</p>
+<p>一個 action 是否有價值，主要取決於：</p>
+<ul>
+<li>能引入哪些 predicate</li>
+<li>這些 predicate 是否容易觸發規則鏈</li>
+<li>是否能顯著縮短目標證明路徑</li>
+</ul>
+<br/>
+<br/>
+<h2>六、常見 action 類型</h2>
+<h3>1. 基礎對象</h3>
+<pre><code class="language-txt">free a
+triangle a b c
+quadrangle a b c d
+</code></pre>
+<ul>
+<li><code>free</code> 生成自由點</li>
+<li><code>triangle</code> 生成三角形的 3 個基礎點</li>
+<li><code>quadrangle</code> 生成四邊形的 4 個基礎點</li>
+</ul>
+<h3>2. 點落在線或圓上</h3>
+<pre><code class="language-txt">on_line x a b
+on_circle x o a
+on_pline x a b c
+on_tline x a b c
+</code></pre>
+<ul>
+<li><code>on_line</code> 對應共線約束</li>
+<li><code>on_circle</code> 對應等半徑約束</li>
+<li><code>on_pline</code> 對應平行約束</li>
+<li><code>on_tline</code> 對應垂直約束</li>
+</ul>
+<h3>3. 交點構造</h3>
+<pre><code class="language-txt">intersection_ll x a b c d
+intersection_lc x a o b
+intersection_cc x o w a
+</code></pre>
+<p>分別表示：</p>
+<ul>
+<li>兩線交點</li>
+<li>線與圓交點</li>
+<li>兩圓交點</li>
+</ul>
+<h3>4. 基本幾何構造</h3>
+<pre><code class="language-txt">midpoint x a b
+foot x a b c
+mirror x a b
+</code></pre>
+<ul>
+<li><code>midpoint</code> 生成中點</li>
+<li><code>foot</code> 生成垂足</li>
+<li><code>mirror</code> 生成對稱點</li>
+</ul>
+<p>這類 action 的特點是單次呼叫即可引入多條高密度關係。</p>
+<h3>5. 三角形中心</h3>
+<p>例如：</p>
+<pre><code class="language-txt">circumcenter x a b c
+incenter x a b c
+excenter x a b c
+centroid x y z i a b c
+ninepoints x y z i a b c
+</code></pre>
+<p>這類 action 通常會一次性引入多組關係，如等距、角平分與垂直平分等。</p>
+<h3>6. 特殊多邊形</h3>
+<p>例如：</p>
+<pre><code class="language-txt">square a b x y
+rectangle a b c d
+parallelogram a b c x
+trapezoid a b c d
+eq_trapezoid a b c d
+</code></pre>
+<p>這類 primitive 的特點是初始關係更強，更適合生成結構化題目或高約束訓練樣本。</p>
+<br/>
+<br/>
+<h2>七、示例解析</h2>
+<p>示例：</p>
+<pre><code class="language-txt">orthocenter
+a b c = triangle;
+h = on_tline b a c, on_tline c a b
+? perp a h b c
+</code></pre>
+<p>執行過程如下。</p>
+<h3>第一步：解析前提</h3>
+<p><code>triangle a b c</code> 生成基礎點集與非退化條件。</p>
+<h3>第二步：執行構造</h3>
+<p><code>h</code> 被定義為以下兩條約束的交點：</p>
+<ul>
+<li>過 <code>b</code> 且垂直於 <code>ac</code></li>
+<li>過 <code>c</code> 且垂直於 <code>ab</code></li>
+</ul>
+<h3>第三步：落成 predicate</h3>
+<p>構造動作被轉成：</p>
+<pre><code class="language-txt">perp b h a c
+perp c h a b
+</code></pre>
+<h3>第四步：驗證目標</h3>
+<p>系統檢查是否能推出：</p>
+<pre><code class="language-txt">perp a h b c
+</code></pre>
+<p>如果可以推出，則目標成立；否則該問題在當前構造與規則集下尚未被證明。</p>
+<br/>
+<br/>
+<h2>八、執行 pipeline</h2>
+<p>從問題文本到目標驗證，典型 pipeline 如下：</p>
+<pre><code class="language-txt">Problem DSL
+  -&gt; parse.py
+  -&gt; action expansion via defs.txt
+  -&gt; geometry graph
+  -&gt; predicate inference via rules.txt
+  -&gt; DDAR solver
+</code></pre>
+<p>各階段職責如下：</p>
+<ol>
+<li>解析問題文本，識別前提、構造與目標</li>
+<li>查找 <code>defs.txt</code> 中對應的 action 定義</li>
+<li>展開變數依賴、輸入條件與幾何約束</li>
+<li>把約束寫入幾何關係圖</li>
+<li>依據 <code>rules.txt</code> 觸發新的 predicate</li>
+<li>對目標 predicate 做可達性檢查</li>
+</ol>
+<p>數值構圖與符號推理在該流程中通常並行存在：</p>
+<ul>
+<li>數值層負責實例化與真值檢查</li>
+<li>符號層負責嚴格推導與證明追蹤</li>
+</ul>
+<br/>
+<br/>
+<h2>九、實作注意事項</h2>
+<h3>1. action 設計應面向關係產出</h3>
+<p>一個 action 是否值得保留，應優先評估其 predicate 產出品質，而不是幾何含義是否「直觀」。</p>
+<h3>2. 必須顯式處理退化條件</h3>
+<p>如點重合、平行線無交點、零半徑圓等情況，都應在輸入條件或數值層被攔截。</p>
+<h3>3. predicate 集合決定可表達上限</h3>
+<p>若系統只能表達共線、平行與垂直，複雜幾何題的表示能力會很快受限。</p>
+<h3>4. 數值層介面不應省略</h3>
+<p>如果只有符號定義而沒有數值構造介面，資料生成、除錯與真值校驗成本會顯著上升。</p>
+<br/>
+<br/>
+<h2>十、最小可實作子集建議</h2>
+<p>若需要實作與 AlphaGeometry 思路相容的最小版本，可優先支援以下 action：</p>
+<ul>
+<li><code>triangle</code></li>
+<li><code>on_line</code></li>
+<li><code>on_tline</code></li>
+<li><code>on_pline</code></li>
+<li><code>intersection_ll</code></li>
+<li><code>midpoint</code></li>
+<li><code>foot</code></li>
+</ul>
+<p>並至少支援以下 predicate：</p>
+<ul>
+<li><code>coll</code></li>
+<li><code>perp</code></li>
+<li><code>para</code></li>
+<li><code>cong</code></li>
+<li><code>cyclic</code></li>
+<li><code>eqangle</code></li>
+</ul>
+<p>這是一個較小但可工作的協議核心。</p>
+<br/>
+<br/>
+<h2>十一、協議本質</h2>
+<p>AlphaGeometry DSL 可以概括為：</p>
+<pre><code class="language-txt">Geometry Construction DSL
++ Predicate Interface
++ Rule-System Input Layer
+</code></pre>
+<p>它的主要價值不在於「描述圖形」，而在於把幾何問題壓縮成一個可執行、可驗證、可推理的協議層。</p>
+<br/>
+<br/>
+<h2>十二、靠譜推薦：大角幾何（Dino-GSP）</h2>
+<p>如果需要一個比 AlphaGeometry DSL 更開放、面向產品與生態整合的幾何表達環境，可以看我推出的 <a href="/zh-tw/products/dino-gsp">大角幾何（Dino-GSP）</a>。</p>
+<p>它同樣把幾何對象表示為可執行結構，並且也定義了自己的 DSL 與約束表示層，用於支援：</p>
+<ul>
+<li>更開放的幾何構造與編輯流程</li>
+<li>面向教學、內容生產與 AI 幾何應用的生態接入</li>
+<li>圖形生成、約束驗證、輔助結構構造等可程式化能力</li>
+</ul>
+<p>如果把 AlphaGeometry DSL 看成偏求解器與研究系統內部協議，大角幾何則更偏向可擴展產品層與開放生態介面。</p>
+<br/>
+<br/></div></article><section class="related-essays" data-motion-item=""><h2>相關文章</h2><div class="cards-3"><article class="card ui-panel"><p class="micro">AI for Math</p><h3>AlphaGeometry2 深度解析：Google AI 如何解決 IMO 幾何題？</h3><p>拆解 AlphaGeometry2 如何把幾何推理、輔助線搜尋與符號證明結合起來解決 IMO 幾何題，並整理對數學 AI 工程的啟發。</p><p class="micro">geometry_reasoning · alphageometry · deepmind</p><a class="action-inline" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="essay_related_alphageometry2-google-ai-solve-imo-geometry-problems" data-analytics-param-cta-position="essay_related" data-analytics-param-content_type="essay" data-analytics-param-source_slug="google-alphageometry-dsl-guide" data-analytics-param-target_slug="alphageometry2-google-ai-solve-imo-geometry-problems" data-analytics-param-theme_slug="ai-for-math" href="/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems">閱讀文章</a></article><article class="card ui-panel"><p class="micro">AI for Math</p><h3>Google DeepMind Aletheia：完全自主研究的數學 Agent 解讀</h3><p>從 AlphaGo 到 AlphaGeometry、AlphaProof，再到 Aletheia，拆解可驗證數學研究閉環的工程價值。</p><p class="micro">formal_math · autonomous_research · deepmind</p><a class="action-inline" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="essay_related_google-deepmind-aletheia-autonomous-math-research-agent" data-analytics-param-cta-position="essay_related" data-analytics-param-content_type="essay" data-analytics-param-source_slug="google-alphageometry-dsl-guide" data-analytics-param-target_slug="google-deepmind-aletheia-autonomous-math-research-agent" data-analytics-param-theme_slug="ai-for-math" href="/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent">閱讀文章</a></article><article class="card ui-panel"><p class="micro">AI for Math</p><h3>HKU CodePlot-CoT 深度解析：視覺推理還是幾何推理？</h3><p>從可執行繪圖到幾何證明，分析 CodePlot-CoT 的優勢與結構性邊界。</p><p class="micro">geometry_reasoning · visual_reasoning · codeplot_cot</p><a class="action-inline" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="essay_related_hku-codeplot-cot-visual-or-geometric-reasoning" data-analytics-param-cta-position="essay_related" data-analytics-param-content_type="essay" data-analytics-param-source_slug="google-alphageometry-dsl-guide" data-analytics-param-target_slug="hku-codeplot-cot-visual-or-geometric-reasoning" data-analytics-param-theme_slug="ai-for-math" href="/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning">閱讀文章</a></article></div></section></section><!--$--><!--/$--></main><footer class="site-footer" data-motion="section"><div class="container footer-inner"><p data-motion-item="">© <!-- -->2026<!-- --> Luhui Dev</p><div><a data-motion-item="" href="/zh-tw/rss.xml" data-analytics-event="select_content" data-analytics-param-cta-name="footer_rss" data-analytics-param-cta-position="footer">RSS</a><a data-motion-item="" data-analytics-event="select_content" data-analytics-clarity-event="cta_click" data-analytics-param-cta-name="footer_contact" data-analytics-param-cta-position="footer" href="/zh-tw/contact">Contact</a></div></div></footer></div></div><script>(self.__next_s=self.__next_s||[]).push(["/editorial-kit/assets/js/theme-presets.js",{}])</script><script>(self.__next_s=self.__next_s||[]).push(["/editorial-kit/assets/js/motion-reveal.js",{}])</script><script src="/_next/static/chunks/webpack-0cfe6f51555ca84e.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[5165,[\"177\",\"static/chunks/app/layout-bc433144c6eccffa.js\"],\"\"]\n3:I[5341,[],\"\"]\n4:I[25,[],\"\"]\n5:I[1848,[\"345\",\"static/chunks/app/not-found-6a873e9b606a9eb4.js\"],\"default\"]\n6:I[2567,[\"177\",\"static/chunks/app/layout-bc433144c6eccffa.js\"],\"MotionBootstrap\"]\n7:I[9750,[\"177\",\"static/chunks/app/layout-bc433144c6eccffa.js\"],\"AnalyticsBootstrap\"]\na:I[5104,[],\"OutletBoundary\"]\nc:I[7158,[],\"AsyncMetadataOutlet\"]\ne:I[5104,[],\"ViewportBoundary\"]\n10:I[5104,[],\"MetadataBoundary\"]\n11:\"$Sreact.suspense\"\n13:I[4431,[],\"\"]\n:HL[\"/_next/static/css/62f349f6786803ea.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"s6U5OGQX2k1nKKp9lxbrS\",\"p\":\"\",\"c\":[\"\",\"zh-tw\",\"essays\",\"google-alphageometry-dsl-guide\"],\"i\":false,\"f\":[[[\"\",{\"children\":[[\"locale\",\"zh-tw\",\"d\"],{\"children\":[\"essays\",{\"children\":[[\"slug\",\"google-alphageometry-dsl-guide\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/62f349f6786803ea.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"data-theme\":\"forest-mint\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"/editorial-kit/assets/css/tokens.css\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"/editorial-kit/assets/css/foundation.css\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"/editorial-kit/assets/css/motion.css\"}],[\"$\",\"$L2\",null,{\"id\":\"gtm-init\",\"strategy\":\"beforeInteractive\",\"children\":\"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'\u0026l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NNJP6S5J');\"}]]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"noscript\",null,{\"children\":[\"$\",\"iframe\",null,{\"src\":\"https://www.googletagmanager.com/ns.html?id=GTM-NNJP6S5J\",\"height\":\"0\",\"width\":\"0\",\"style\":{\"display\":\"none\",\"visibility\":\"hidden\"}}]}],[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"$L5\",null,{}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L2\",null,{\"src\":\"/editorial-kit/assets/js/theme-presets.js\",\"strategy\":\"beforeInteractive\"}],[\"$\",\"$L2\",null,{\"src\":\"/editorial-kit/assets/js/motion-reveal.js\",\"strategy\":\"beforeInteractive\"}],[\"$\",\"$L6\",null,{}],[\"$\",\"$L7\",null,{}]]}]]}]]}],{\"children\":[[\"locale\",\"zh-tw\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,\"$L8\"]}],{\"children\":[\"essays\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"google-alphageometry-dsl-guide\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L9\",null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",[\"$\",\"$Lc\",null,{\"promise\":\"$@d\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$Le\",null,{\"children\":\"$Lf\"}],null],[\"$\",\"$L10\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$11\",null,{\"fallback\":null,\"children\":\"$L12\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$13\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"14:I[2063,[\"664\",\"static/chunks/664-6d821dc1aacb6b48.js\",\"463\",\"static/chunks/463-c9f34cb9eb11a0dc.js\",\"450\",\"static/chunks/app/%5Blocale%5D/layout-9a92a8bd2e2713d1.js\"],\"default\"]\n15:I[1047,[\"664\",\"static/chunks/664-6d821dc1aacb6b48.js\",\"463\",\"static/chunks/463-c9f34cb9eb11a0dc.js\",\"450\",\"static/chunks/app/%5Blocale%5D/layout-9a92a8bd2e2713d1.js\"],\"SiteHeader\"]\n16:I[9664,[\"664\",\"static/chunks/664-6d821dc1aacb6b48.js\",\"470\",\"static/chunks/app/%5Blocale%5D/essays/%5Bslug%5D/page-1b29c572d7a455a0.js\"],\"\"]\n"])</script><script>self.__next_f.push([1,"8:[\"$\",\"$L14\",null,{\"locale\":\"zh-tw\",\"now\":\"$D2026-03-07T17:28:10.743Z\",\"timeZone\":\"UTC\",\"messages\":{\"nav\":{\"about\":\"關於\",\"products\":\"產品\",\"weekly\":\"週刊\",\"essays\":\"文章\",\"research\":\"研究\",\"collaborate\":\"合作\",\"contact\":\"聯絡\",\"language\":\"語言\",\"menu\":\"選單\"},\"home\":{\"coreProducts\":\"主線產品\",\"milestones\":\"產品里程碑\",\"latestWeekly\":\"最新週刊\",\"recentEssays\":\"最新文章\",\"vision\":\"從數學走向教育基礎設施\",\"workWithMe\":\"合作方向\",\"exploreProducts\":\"查看產品\",\"readEssays\":\"閱讀文章\",\"readWeekly\":\"閱讀週刊\",\"workWithMeCTA\":\"聯絡合作\"},\"essaysPage\":{\"title\":\"文章\",\"themeBrowseTitle\":\"依主題瀏覽\",\"relatedTitle\":\"相關文章\",\"themeLabel\":\"主題\",\"readEssay\":\"閱讀文章\",\"publishedAtLabel\":\"發布日期\",\"updatedAtLabel\":\"最後修改\",\"metaTitle\":\"文章 | Luhui Dev\",\"metaDescription\":\"聚焦 AI 數學、Agent 架構與教育基礎設施的長文寫作。\",\"themeEmptyState\":\"此主題暫時還沒有文章，後續會持續更新。\"},\"themes\":{\"ai-for-math\":{\"label\":\"AI for Math\",\"description\":\"面向數學 AI 系統的基礎方法、技術路線與產品化思考。\",\"seoTitle\":\"AI for Math 主題文章 | Luhui Dev\",\"seoDescription\":\"圍繞 AI for Math 系統、推理流程與可落地方向的深度文章。\"}}},\"children\":[\"$\",\"div\",null,{\"className\":\"page-wrap\",\"children\":[\"$\",\"div\",null,{\"className\":\"page-shell ui-shell\",\"children\":[[\"$\",\"$L15\",null,{\"locale\":\"zh-tw\"}],[\"$\",\"main\",null,{\"className\":\"container\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"site-footer\",\"data-motion\":\"section\",\"children\":[\"$\",\"div\",null,{\"className\":\"container footer-inner\",\"children\":[[\"$\",\"p\",null,{\"data-motion-item\":\"\",\"children\":[\"© \",2026,\" Luhui Dev\"]}],[\"$\",\"div\",null,{\"children\":[[\"$\",\"a\",null,{\"data-motion-item\":\"\",\"href\":\"/zh-tw/rss.xml\",\"data-analytics-event\":\"select_content\",\"data-analytics-param-cta-name\":\"footer_rss\",\"data-analytics-param-cta-position\":\"footer\",\"children\":\"RSS\"}],[\"$\",\"$L16\",null,{\"data-motion-item\":\"\",\"href\":\"/zh-tw/contact\",\"data-analytics-event\":\"select_content\",\"data-analytics-clarity-event\":\"cta_click\",\"data-analytics-param-cta-name\":\"footer_contact\",\"data-analytics-param-cta-position\":\"footer\",\"children\":\"Contact\"}]]}]]}]}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"f:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"17:I[6505,[],\"IconMark\"]\n"])</script><script>self.__next_f.push([1,"d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"LuhuiDev,AlphaGeometry DSL,Google AlphaGeometry,AlphaGeometry DSL 教程,幾何構造語言,幾何推理 DSL,defs.txt,predicate,rules.txt,幾何求解器,DDAR\"}],[\"$\",\"link\",\"3\",{\"rel\":\"canonical\",\"href\":\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"link\",\"4\",{\"rel\":\"alternate\",\"hrefLang\":\"en\",\"href\":\"https://luhuidev.com/en/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"link\",\"5\",{\"rel\":\"alternate\",\"hrefLang\":\"zh-cn\",\"href\":\"https://luhuidev.com/zh-cn/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"link\",\"6\",{\"rel\":\"alternate\",\"hrefLang\":\"zh-tw\",\"href\":\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"link\",\"7\",{\"rel\":\"alternate\",\"hrefLang\":\"es\",\"href\":\"https://luhuidev.com/es/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"link\",\"8\",{\"rel\":\"alternate\",\"hrefLang\":\"x-default\",\"href\":\"https://luhuidev.com/en/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:title\",\"content\":\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:description\",\"content\":\"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:url\",\"content\":\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:site_name\",\"content\":\"Luhui Dev\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:locale\",\"content\":\"zh-tw\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:image\",\"content\":\"https://luhuidev.com/og-default.svg\"}],[\"$\",\"meta\",\"15\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"16\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"17\",{\"property\":\"og:image:alt\",\"content\":\"Luhui Dev\"}],[\"$\",\"meta\",\"18\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"20\",{\"name\":\"twitter:title\",\"content\":\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\"}],[\"$\",\"meta\",\"21\",{\"name\":\"twitter:description\",\"content\":\"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。\"}],[\"$\",\"meta\",\"22\",{\"name\":\"twitter:image\",\"content\":\"https://luhuidev.com/og-default.svg\"}],[\"$\",\"link\",\"23\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"24\",{\"rel\":\"icon\",\"href\":\"/icon.png?8bcfac582abffbe1\",\"type\":\"image/png\",\"sizes\":\"512x512\"}],[\"$\",\"$L17\",\"25\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"12:\"$d:metadata\"\n"])</script><script>self.__next_f.push([1,"9:[\"$\",\"section\",null,{\"className\":\"detail-page\",\"data-motion\":\"section\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\\\",\\\"description\\\":\\\"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。\\\",\\\"datePublished\\\":\\\"2026-03-08\\\",\\\"dateModified\\\":\\\"2026-03-08\\\",\\\"author\\\":{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Luhui Dev\\\"},\\\"inLanguage\\\":\\\"zh-tw\\\",\\\"mainEntityOfPage\\\":\\\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\\\"}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"BreadcrumbList\\\",\\\"itemListElement\\\":[{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":1,\\\"name\\\":\\\"Home\\\",\\\"item\\\":\\\"https://luhuidev.com/zh-tw\\\"},{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":2,\\\"name\\\":\\\"Essays\\\",\\\"item\\\":\\\"https://luhuidev.com/zh-tw/essays\\\"},{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":3,\\\"name\\\":\\\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\\\",\\\"item\\\":\\\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\\\"}]}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebPage\\\",\\\"name\\\":\\\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\\\",\\\"description\\\":\\\"系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。\\\",\\\"url\\\":\\\"https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide\\\",\\\"inLanguage\\\":\\\"zh-tw\\\",\\\"isPartOf\\\":{\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"Luhui Dev\\\",\\\"url\\\":\\\"https://luhuidev.com/zh-tw\\\"}}\"}}],[\"$\",\"h1\",null,{\"className\":\"page-title\",\"data-motion-item\":\"\",\"children\":\"AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解\"}],[\"$\",\"div\",null,{\"className\":\"detail-meta\",\"data-motion-item\":\"\",\"children\":[[\"$\",\"p\",null,{\"className\":\"micro detail-meta-item\",\"children\":[[\"$\",\"span\",null,{\"className\":\"detail-meta-label\",\"children\":[\"主題\",\":\"]}],\" \",[\"$\",\"$L16\",null,{\"href\":\"/zh-tw/essays/theme/ai-for-math\",\"className\":\"detail-theme-link\",\"data-analytics-event\":\"select_content\",\"data-analytics-clarity-event\":\"cta_click\",\"data-analytics-param-cta-name\":\"essay_theme_ai-for-math\",\"data-analytics-param-cta-position\":\"essay_detail_meta\",\"data-analytics-param-content_type\":\"essay_theme\",\"data-analytics-param-theme_slug\":\"ai-for-math\",\"children\":\"AI for Math\"}]]}],[\"$\",\"p\",null,{\"className\":\"micro detail-meta-item\",\"children\":[[\"$\",\"span\",null,{\"className\":\"detail-meta-label\",\"children\":[\"發布日期\",\":\"]}],\" \",[\"$\",\"time\",null,{\"dateTime\":\"2026-03-08\",\"children\":\"2026年3月8日\"}]]}],[\"$\",\"p\",null,{\"className\":\"micro detail-meta-item\",\"children\":[[\"$\",\"span\",null,{\"className\":\"detail-meta-label\",\"children\":[\"最後修改\",\":\"]}],\" \",[\"$\",\"time\",null,{\"dateTime\":\"2026-03-08\",\"children\":\"2026年3月8日\"}]]}]]}],[\"$\",\"article\",null,{\"className\":\"mdx-prose\",\"data-motion\":\"section\",\"children\":[\"$\",\"div\",null,{\"className\":\"mdx-prose-content\",\"data-motion-item\":\"\",\"children\":\"$L18\"}]}],[\"$\",\"section\",null,{\"className\":\"related-essays\",\"data-motion-item\":\"\",\"children\":[[\"$\",\"h2\",null,{\"children\":\"相關文章\"}],[\"$\",\"div\",null,{\"className\":\"cards-3\",\"children\":[[\"$\",\"article\",\"essay-alphageometry2-google-ai-solve-imo-geometry-problems\",{\"className\":\"card ui-panel\",\"children\":[[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"AI for Math\"}],[\"$\",\"h3\",null,{\"children\":\"AlphaGeometry2 深度解析：Google AI 如何解決 IMO 幾何題？\"}],[\"$\",\"p\",null,{\"children\":\"拆解 AlphaGeometry2 如何把幾何推理、輔助線搜尋與符號證明結合起來解決 IMO 幾何題，並整理對數學 AI 工程的啟發。\"}],[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"geometry_reasoning · alphageometry · deepmind\"}],[\"$\",\"$L16\",null,{\"className\":\"action-inline\",\"href\":\"/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems\",\"data-analytics-event\":\"select_content\",\"data-analytics-clarity-event\":\"cta_click\",\"data-analytics-param-cta-name\":\"essay_related_alphageometry2-google-ai-solve-imo-geometry-problems\",\"data-analytics-param-cta-position\":\"essay_related\",\"data-analytics-param-content_type\":\"essay\",\"data-analytics-param-source_slug\":\"google-alphageometry-dsl-guide\",\"data-analytics-param-target_slug\":\"alphageometry2-google-ai-solve-imo-geometry-problems\",\"data-analytics-param-theme_slug\":\"ai-for-math\",\"children\":\"閱讀文章\"}]]}],\"$L19\",\"$L1a\"]}]]}]]}]\n"])</script><script>self.__next_f.push([1,"19:[\"$\",\"article\",\"essay-google-deepmind-aletheia-autonomous-math-research-agent\",{\"className\":\"card ui-panel\",\"children\":[[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"AI for Math\"}],[\"$\",\"h3\",null,{\"children\":\"Google DeepMind Aletheia：完全自主研究的數學 Agent 解讀\"}],[\"$\",\"p\",null,{\"children\":\"從 AlphaGo 到 AlphaGeometry、AlphaProof，再到 Aletheia，拆解可驗證數學研究閉環的工程價值。\"}],[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"formal_math · autonomous_research · deepmind\"}],[\"$\",\"$L16\",null,{\"className\":\"action-inline\",\"href\":\"/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent\",\"data-analytics-event\":\"select_content\",\"data-analytics-clarity-event\":\"cta_click\",\"data-analytics-param-cta-name\":\"essay_related_google-deepmind-aletheia-autonomous-math-research-agent\",\"data-analytics-param-cta-position\":\"essay_related\",\"data-analytics-param-content_type\":\"essay\",\"data-analytics-param-source_slug\":\"google-alphageometry-dsl-guide\",\"data-analytics-param-target_slug\":\"google-deepmind-aletheia-autonomous-math-research-agent\",\"data-analytics-param-theme_slug\":\"ai-for-math\",\"children\":\"閱讀文章\"}]]}]\n"])</script><script>self.__next_f.push([1,"1a:[\"$\",\"article\",\"essay-hku-codeplot-cot-visual-or-geometric-reasoning\",{\"className\":\"card ui-panel\",\"children\":[[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"AI for Math\"}],[\"$\",\"h3\",null,{\"children\":\"HKU CodePlot-CoT 深度解析：視覺推理還是幾何推理？\"}],[\"$\",\"p\",null,{\"children\":\"從可執行繪圖到幾何證明，分析 CodePlot-CoT 的優勢與結構性邊界。\"}],[\"$\",\"p\",null,{\"className\":\"micro\",\"children\":\"geometry_reasoning · visual_reasoning · codeplot_cot\"}],[\"$\",\"$L16\",null,{\"className\":\"action-inline\",\"href\":\"/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning\",\"data-analytics-event\":\"select_content\",\"data-analytics-clarity-event\":\"cta_click\",\"data-analytics-param-cta-name\":\"essay_related_hku-codeplot-cot-visual-or-geometric-reasoning\",\"data-analytics-param-cta-position\":\"essay_related\",\"data-analytics-param-content_type\":\"essay\",\"data-analytics-param-source_slug\":\"google-alphageometry-dsl-guide\",\"data-analytics-param-target_slug\":\"hku-codeplot-cot-visual-or-geometric-reasoning\",\"data-analytics-param-theme_slug\":\"ai-for-math\",\"children\":\"閱讀文章\"}]]}]\n"])</script><script>self.__next_f.push([1,"18:[[\"$\",\"p\",null,{\"children\":\"本文僅討論 AlphaGeometry DSL 本身，不討論模型訓練、搜尋策略或論文結果。\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"目標是把這套 DSL 當作一份面向研發的協議說明書來拆解，回答以下問題：\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"問題輸入如何編碼\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"defs.txt\"}],\" 中 action 如何定義\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"幾何關係如何映射為 predicate\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"數值構造與符號推理如何銜接\"}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"如果要復現 AlphaGeometry、編寫幾何資料生成器，或為自定義 solver 設計相容層，理解 DSL 協議是基礎前置工作。\"}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"一、DSL 的角色定義\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"AlphaGeometry DSL 是一套面向幾何構造與關係表達的領域語言。它主要承擔 3 個職責：\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"表達初始幾何前提\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"表達可執行的構造動作\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"表達待驗證的幾何目標\"}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"其輸出不是最終證明文本，而是可供推理引擎消費的幾何關係集合。\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"從實作角度看，DSL 更接近一層中間表示：\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"上游連接題目描述或資料生成器\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"中游連接 action 定義與關係展開\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"下游連接 \",[\"$\",\"code\",null,{\"children\":\"rules.txt\"}],\" 與 DDAR 推理\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"協議核心不在「圖形繪製」，而在「關係生成」。\"}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"二、問題檔案結構\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"一個完整問題通常寫成：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"problem_name\\npremises ? goal\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"示例：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"orthocenter\\na b c = triangle;\\nh = on_tline b a c, on_tline c a b\\n? perp a h b c\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"可以拆成 3 個區塊：\"}],\"\\n\",[\"$\",\"ol\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"a b c = triangle;\"}],\"\\n初始前提與自由對象\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"h = on_tline b a c, on_tline c a b\"}],\"\\n基於已知對象執行構造\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"? perp a h b c\"}],\"\\n目標 predicate\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"這段 DSL 的含義不是自然語言題解，而是一段幾何程式：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"Premises\\n  -\u003e constructions\\n  -\u003e predicate graph\\n  -\u003e goal checking\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"解析後，系統通常需要產出：\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"初始對象表\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"action 呼叫序列\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"predicate 初始集合\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"待檢查目標\"}],\"\\n\"]}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"三、基本語法約定\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"DSL 的核心表達形式是：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"output = action(parameters)\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"示例：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"h = on_tline b a c, on_tline c a b\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"表示點 \",[\"$\",\"code\",null,{\"children\":\"h\"}],\" 同時滿足兩個構造約束：\"]}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[\"過 \",[\"$\",\"code\",null,{\"children\":\"b\"}],\" 作直線，垂直於 \",[\"$\",\"code\",null,{\"children\":\"ac\"}]]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"過 \",[\"$\",\"code\",null,{\"children\":\"c\"}],\" 作直線，垂直於 \",[\"$\",\"code\",null,{\"children\":\"ab\"}]]}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"因此 \",[\"$\",\"code\",null,{\"children\":\"h\"}],\" 是兩條垂線的交點。\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"這類表達具有兩個特點：\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"輸出變數統一使用點變數\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"幾何對象透過點集隱式表示，而非獨立對象型別\"}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"例如：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"line a b\\ncircle o a\\n\"}]}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"line a b\"}],\" 表示由點 \",[\"$\",\"code\",null,{\"children\":\"a\"}],\"、\",[\"$\",\"code\",null,{\"children\":\"b\"}],\" 定義的直線\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"circle o a\"}],\" 表示圓心 \",[\"$\",\"code\",null,{\"children\":\"o\"}],\"、經過點 \",[\"$\",\"code\",null,{\"children\":\"a\"}],\" 的圓\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"這種設計簡化了解析器與關係圖結構，但要求 predicate 系統足夠強，能覆蓋直線、圓與角的高層語義。\"}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"br\",null,{}],\"\\n\",[\"$\",\"h2\",null,{\"children\":[\"四、\",[\"$\",\"code\",null,{\"children\":\"defs.txt\"}],\" 中 action 的定義結構\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"defs.txt\"}],\" 是 action 註冊表。每個 action 通常由 5 個部分組成：\"]}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"action_name outputs inputs\\n\\nvariable dependency\\n\\ninput conditions\\n\\ngeometric constraints\\n\\nnumerical constructions\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"示例：\"}],\"\\n\",[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"midpoint x a b\\nx : a b\\na b = diff a b\\nx : coll x a b, cong x a x b\\nmidp a b\\n\"}]}],\"\\n\",\"$L1b\",\"\\n\",\"$L1c\",\"\\n\",\"$L1d\",\"\\n\",\"$L1e\",\"\\n\",\"$L1f\",\"\\n\",\"$L20\",\"\\n\",\"$L21\",\"\\n\",\"$L22\",\"\\n\",\"$L23\",\"\\n\",\"$L24\",\"\\n\",\"$L25\",\"\\n\",\"$L26\",\"\\n\",\"$L27\",\"\\n\",\"$L28\",\"\\n\",\"$L29\",\"\\n\",\"$L2a\",\"\\n\",\"$L2b\",\"\\n\",\"$L2c\",\"\\n\",\"$L2d\",\"\\n\",\"$L2e\",\"\\n\",\"$L2f\",\"\\n\",\"$L30\",\"\\n\",\"$L31\",\"\\n\",\"$L32\",\"\\n\",\"$L33\",\"\\n\",\"$L34\",\"\\n\",\"$L35\",\"\\n\",\"$L36\",\"\\n\",\"$L37\",\"\\n\",\"$L38\",\"\\n\",\"$L39\",\"\\n\",\"$L3a\",\"\\n\",\"$L3b\",\"\\n\",\"$L3c\",\"\\n\",\"$L3d\",\"\\n\",\"$L3e\",\"\\n\",\"$L3f\",\"\\n\",\"$L40\",\"\\n\",\"$L41\",\"\\n\",\"$L42\",\"\\n\",\"$L43\",\"\\n\",\"$L44\",\"\\n\",\"$L45\",\"\\n\",\"$L46\",\"\\n\",\"$L47\",\"\\n\",\"$L48\",\"\\n\",\"$L49\",\"\\n\",\"$L4a\",\"\\n\",\"$L4b\",\"\\n\",\"$L4c\",\"\\n\",\"$L4d\",\"\\n\",\"$L4e\",\"\\n\",\"$L4f\",\"\\n\",\"$L50\",\"\\n\",\"$L51\",\"\\n\",\"$L52\",\"\\n\",\"$L53\",\"\\n\",\"$L54\",\"\\n\",\"$L55\",\"\\n\",\"$L56\",\"\\n\",\"$L57\",\"\\n\",\"$L58\",\"\\n\",\"$L59\",\"\\n\",\"$L5a\",\"\\n\",\"$L5b\",\"\\n\",\"$L5c\",\"\\n\",\"$L5d\",\"\\n\",\"$L5e\",\"\\n\",\"$L5f\",\"\\n\",\"$L60\",\"\\n\",\"$L61\",\"\\n\",\"$L62\",\"\\n\",\"$L63\",\"\\n\",\"$L64\",\"\\n\",\"$L65\",\"\\n\",\"$L66\",\"\\n\",\"$L67\",\"\\n\",\"$L68\",\"\\n\",\"$L69\",\"\\n\",\"$L6a\",\"\\n\",\"$L6b\",\"\\n\",\"$L6c\",\"\\n\",\"$L6d\",\"\\n\",\"$L6e\",\"\\n\",\"$L6f\",\"\\n\",\"$L70\",\"\\n\",\"$L71\",\"\\n\",\"$L72\",\"\\n\",\"$L73\",\"\\n\",\"$L74\",\"\\n\",\"$L75\",\"\\n\",\"$L76\",\"\\n\",\"$L77\",\"\\n\",\"$L78\",\"\\n\",\"$L79\",\"\\n\",\"$L7a\",\"\\n\",\"$L7b\",\"\\n\",\"$L7c\",\"\\n\",\"$L7d\",\"\\n\",\"$L7e\",\"\\n\",\"$L7f\",\"\\n\",\"$L80\",\"\\n\",\"$L81\",\"\\n\",\"$L82\",\"\\n\",\"$L83\",\"\\n\",\"$L84\",\"\\n\",\"$L85\",\"\\n\",\"$L86\",\"\\n\",\"$L87\",\"\\n\",\"$L88\",\"\\n\",\"$L89\",\"\\n\",\"$L8a\",\"\\n\",\"$L8b\",\"\\n\",\"$L8c\",\"\\n\",\"$L8d\",\"\\n\",\"$L8e\",\"\\n\",\"$L8f\",\"\\n\",\"$L90\",\"\\n\",\"$L91\",\"\\n\",\"$L92\",\"\\n\",\"$L93\",\"\\n\",\"$L94\",\"\\n\",\"$L95\"]\n"])</script><script>self.__next_f.push([1,"1b:[\"$\",\"p\",null,{\"children\":\"各部分作用如下。\"}]\n1c:[\"$\",\"h3\",null,{\"children\":\"1. action 簽名\"}]\n1d:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"midpoint x a b\\n\"}]}]\n1e:[\"$\",\"p\",null,{\"children\":\"表示：\"}]\n1f:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[\"action 名稱為 \",[\"$\",\"code\",null,{\"children\":\"midpoint\"}]]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"輸出點為 \",[\"$\",\"code\",null,{\"children\":\"x\"}]]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"輸入點為 \",[\"$\",\"code\",null,{\"children\":\"a b\"}]]}],\"\\n\"]}]\n20:[\"$\",\"h3\",null,{\"children\":\"2. 變數依賴\"}]\n21:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"x : a b\\n\"}]}]\n22:[\"$\",\"p\",null,{\"children\":[\"表示輸出變數 \",[\"$\",\"code\",null,{\"children\":\"x\"}],\" 依賴於輸入 \",[\"$\",\"code\",null,{\"children\":\"a\"}],\"、\",[\"$\",\"code\",null,{\"children\":\"b\"}],\"。\"]}]\n23:[\"$\",\"p\",null,{\"children\":\"這部分通常用於構造依賴圖或變數作用域管理。\"}]\n24:[\"$\",\"h3\",null,{\"children\":\"3. 輸入合法性條件\"}]\n25:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"a b = diff a b\\n\"}]}]\n26:[\"$\",\"p\",null,{\"children\":[\"表示 \",[\"$\",\"code\",null,{\"children\":\"a\"}],\" 和 \",[\"$\",\"code\",null,{\"children\":\"b\"}],\" 必須是不同點。\"]}]\n27:[\"$\",\"p\",null,{\"children\":\"這一層用於阻止退化構造，不直接生成證明關係。\"}]\n28:[\"$\",\"br\",null,{}]\n29:[\"$\",\"br\",null,{}]\n2a:[\"$\",\"h3\",null,{\"children\":\"4. 幾何約束\"}]\n2b:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"x : coll x a b, cong x a x b\\n\"}]}]\n2c:[\"$\",\"p\",null,{\"children\":\"表示 action 完成後必須成立的 predicate：\"}]\n2d:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"coll x a b\"}],\"，即 \",[\"$\",\"code\",null,{\"children\":\"x\"}],\" 與 \",[\"$\",\"code\",null,{\"children\":\"a\"}],\"、\",[\"$\",\"code\",null,{\"children\":\"b\"}],\" 共線\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\""])</script><script>self.__next_f.push([1,"cong x a x b\"}],\"，即 \",[\"$\",\"code\",null,{\"children\":\"XA = XB\"}]]}],\"\\n\"]}]\n2e:[\"$\",\"p\",null,{\"children\":\"這部分是 action 的符號語義定義，也是後續推理系統消費的主要輸入。\"}]\n2f:[\"$\",\"h3\",null,{\"children\":\"5. 數值構造介面\"}]\n30:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"midp a b\\n\"}]}]\n31:[\"$\",\"p\",null,{\"children\":\"表示底層數值引擎應呼叫中點構造。\"}]\n32:[\"$\",\"p\",null,{\"children\":\"數值層的典型用途包括：\"}]\n33:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"生成具體座標實例\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"檢查構造是否退化\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"為 predicate 提供數值真值校驗\"}],\"\\n\"]}]\n34:[\"$\",\"br\",null,{}]\n35:[\"$\",\"br\",null,{}]\n36:[\"$\",\"h2\",null,{\"children\":\"五、predicate 系統\"}]\n37:[\"$\",\"p\",null,{\"children\":\"predicate 是 AlphaGeometry 推理系統的核心輸入格式。\"}]\n38:[\"$\",\"p\",null,{\"children\":\"常見核心謂詞包括：\"}]\n"])</script><script>self.__next_f.push([1,"39:[\"$\",\"table\",null,{\"children\":[[\"$\",\"thead\",null,{\"children\":[\"$\",\"tr\",null,{\"children\":[[\"$\",\"th\",null,{\"children\":\"predicate\"}],[\"$\",\"th\",null,{\"children\":\"含義\"}]]}]}],[\"$\",\"tbody\",null,{\"children\":[[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"coll A B C\"}]}],[\"$\",\"td\",null,{\"children\":\"三點共線\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"cong A B C D\"}]}],[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"AB = CD\"}]}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"perp A B C D\"}]}],[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"AB ⟂ CD\"}]}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"para A B C D\"}]}],[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"AB ∥ CD\"}]}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"eqangle ...\"}]}],[\"$\",\"td\",null,{\"children\":\"角相等\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"cyclic A B C D\"}]}],[\"$\",\"td\",null,{\"children\":\"四點共圓\"}]]}]]}]]}]\n"])</script><script>self.__next_f.push([1,"3a:[\"$\",\"p\",null,{\"children\":[\"這些 predicate 會進入 \",[\"$\",\"code\",null,{\"children\":\"rules.txt\"}],\" 所定義的規則系統，觸發進一步推導。\"]}]\n3b:[\"$\",\"p\",null,{\"children\":\"典型流程如下：\"}]\n3c:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"construction\\n  -\u003e initial predicates\\n  -\u003e rule firing\\n  -\u003e new predicates\\n  -\u003e goal reached / not reached\\n\"}]}]\n3d:[\"$\",\"p\",null,{\"children\":\"因此 DSL 的核心不是動作目錄本身，而是 predicate 生成能力。\"}]\n3e:[\"$\",\"p\",null,{\"children\":\"一個 action 是否有價值，主要取決於：\"}]\n3f:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"能引入哪些 predicate\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"這些 predicate 是否容易觸發規則鏈\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"是否能顯著縮短目標證明路徑\"}],\"\\n\"]}]\n40:[\"$\",\"br\",null,{}]\n41:[\"$\",\"br\",null,{}]\n42:[\"$\",\"h2\",null,{\"children\":\"六、常見 action 類型\"}]\n43:[\"$\",\"h3\",null,{\"children\":\"1. 基礎對象\"}]\n44:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"free a\\ntriangle a b c\\nquadrangle a b c d\\n\"}]}]\n45:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"free\"}],\" 生成自由點\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"triangle\"}],\" 生成三角形的 3 個基礎點\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"quadrangle\"}],\" 生成四邊形的 4 個基礎點\"]}],\"\\n\"]}]\n46:[\"$\",\"h3\",null,{\"children\":\"2. 點落在線或圓上\"}]\n47:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"on_line x a b\\non_circle x o a\\non_pline x a b c\\non_tline x a b c\\n\"}]}]\n48:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"on_line\"}],\" 對應共線約束\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"on_circle\"}],\" 對應等半徑約束\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children"])</script><script>self.__next_f.push([1,"\":\"on_pline\"}],\" 對應平行約束\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"on_tline\"}],\" 對應垂直約束\"]}],\"\\n\"]}]\n49:[\"$\",\"h3\",null,{\"children\":\"3. 交點構造\"}]\n4a:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"intersection_ll x a b c d\\nintersection_lc x a o b\\nintersection_cc x o w a\\n\"}]}]\n4b:[\"$\",\"p\",null,{\"children\":\"分別表示：\"}]\n4c:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"兩線交點\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"線與圓交點\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"兩圓交點\"}],\"\\n\"]}]\n4d:[\"$\",\"h3\",null,{\"children\":\"4. 基本幾何構造\"}]\n4e:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"midpoint x a b\\nfoot x a b c\\nmirror x a b\\n\"}]}]\n4f:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"midpoint\"}],\" 生成中點\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"foot\"}],\" 生成垂足\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"mirror\"}],\" 生成對稱點\"]}],\"\\n\"]}]\n50:[\"$\",\"p\",null,{\"children\":\"這類 action 的特點是單次呼叫即可引入多條高密度關係。\"}]\n51:[\"$\",\"h3\",null,{\"children\":\"5. 三角形中心\"}]\n52:[\"$\",\"p\",null,{\"children\":\"例如：\"}]\n53:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"circumcenter x a b c\\nincenter x a b c\\nexcenter x a b c\\ncentroid x y z i a b c\\nninepoints x y z i a b c\\n\"}]}]\n54:[\"$\",\"p\",null,{\"children\":\"這類 action 通常會一次性引入多組關係，如等距、角平分與垂直平分等。\"}]\n55:[\"$\",\"h3\",null,{\"children\":\"6. 特殊多邊形\"}]\n56:[\"$\",\"p\",null,{\"children\":\"例如：\"}]\n57:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"square a b x y\\nrectangle a b c d\\nparallelogram a b c x\\ntrapezoid a b c d\\neq_trapezoid a b c d\\n\"}]}]\n58:[\"$\",\"p\",null,{\"children\":\"這類 primitive 的特點是初始關係更強，更適合生成結構化"])</script><script>self.__next_f.push([1,"題目或高約束訓練樣本。\"}]\n59:[\"$\",\"br\",null,{}]\n5a:[\"$\",\"br\",null,{}]\n5b:[\"$\",\"h2\",null,{\"children\":\"七、示例解析\"}]\n5c:[\"$\",\"p\",null,{\"children\":\"示例：\"}]\n5d:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"orthocenter\\na b c = triangle;\\nh = on_tline b a c, on_tline c a b\\n? perp a h b c\\n\"}]}]\n5e:[\"$\",\"p\",null,{\"children\":\"執行過程如下。\"}]\n5f:[\"$\",\"h3\",null,{\"children\":\"第一步：解析前提\"}]\n60:[\"$\",\"p\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"triangle a b c\"}],\" 生成基礎點集與非退化條件。\"]}]\n61:[\"$\",\"h3\",null,{\"children\":\"第二步：執行構造\"}]\n62:[\"$\",\"p\",null,{\"children\":[[\"$\",\"code\",null,{\"children\":\"h\"}],\" 被定義為以下兩條約束的交點：\"]}]\n63:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[\"過 \",[\"$\",\"code\",null,{\"children\":\"b\"}],\" 且垂直於 \",[\"$\",\"code\",null,{\"children\":\"ac\"}]]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"過 \",[\"$\",\"code\",null,{\"children\":\"c\"}],\" 且垂直於 \",[\"$\",\"code\",null,{\"children\":\"ab\"}]]}],\"\\n\"]}]\n64:[\"$\",\"h3\",null,{\"children\":\"第三步：落成 predicate\"}]\n65:[\"$\",\"p\",null,{\"children\":\"構造動作被轉成：\"}]\n66:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"perp b h a c\\nperp c h a b\\n\"}]}]\n67:[\"$\",\"h3\",null,{\"children\":\"第四步：驗證目標\"}]\n68:[\"$\",\"p\",null,{\"children\":\"系統檢查是否能推出：\"}]\n69:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"perp a h b c\\n\"}]}]\n6a:[\"$\",\"p\",null,{\"children\":\"如果可以推出，則目標成立；否則該問題在當前構造與規則集下尚未被證明。\"}]\n6b:[\"$\",\"br\",null,{}]\n6c:[\"$\",\"br\",null,{}]\n6d:[\"$\",\"h2\",null,{\"children\":\"八、執行 pipeline\"}]\n6e:[\"$\",\"p\",null,{\"children\":\"從問題文本到目標驗證，典型 pipeline 如下：\"}]\n6f:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"Problem DSL\\n  -\u003e parse.py\\n  -\u003e action expansion via defs.txt\\n  -\u003e geometry graph\\n  -\u003e p"])</script><script>self.__next_f.push([1,"redicate inference via rules.txt\\n  -\u003e DDAR solver\\n\"}]}]\n70:[\"$\",\"p\",null,{\"children\":\"各階段職責如下：\"}]\n71:[\"$\",\"ol\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"解析問題文本，識別前提、構造與目標\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"查找 \",[\"$\",\"code\",null,{\"children\":\"defs.txt\"}],\" 中對應的 action 定義\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"展開變數依賴、輸入條件與幾何約束\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"把約束寫入幾何關係圖\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"依據 \",[\"$\",\"code\",null,{\"children\":\"rules.txt\"}],\" 觸發新的 predicate\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"對目標 predicate 做可達性檢查\"}],\"\\n\"]}]\n72:[\"$\",\"p\",null,{\"children\":\"數值構圖與符號推理在該流程中通常並行存在：\"}]\n73:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"數值層負責實例化與真值檢查\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"符號層負責嚴格推導與證明追蹤\"}],\"\\n\"]}]\n74:[\"$\",\"br\",null,{}]\n75:[\"$\",\"br\",null,{}]\n76:[\"$\",\"h2\",null,{\"children\":\"九、實作注意事項\"}]\n77:[\"$\",\"h3\",null,{\"children\":\"1. action 設計應面向關係產出\"}]\n78:[\"$\",\"p\",null,{\"children\":\"一個 action 是否值得保留，應優先評估其 predicate 產出品質，而不是幾何含義是否「直觀」。\"}]\n79:[\"$\",\"h3\",null,{\"children\":\"2. 必須顯式處理退化條件\"}]\n7a:[\"$\",\"p\",null,{\"children\":\"如點重合、平行線無交點、零半徑圓等情況，都應在輸入條件或數值層被攔截。\"}]\n7b:[\"$\",\"h3\",null,{\"children\":\"3. predicate 集合決定可表達上限\"}]\n7c:[\"$\",\"p\",null,{\"children\":\"若系統只能表達共線、平行與垂直，複雜幾何題的表示能力會很快受限。\"}]\n7d:[\"$\",\"h3\",null,{\"children\":\"4. 數值層介面不應省略\"}]\n7e:[\"$\",\"p\",null,{\"children\":\"如果只有符號定義而沒有數值構造介面，資料生成、除錯與真值校驗成本會顯著上升。\"}]\n7f:[\"$\",\"br\",null,{}]\n80:[\"$\",\"br\",null,{}]\n81:[\"$\",\"h2\",null,{\"children\":\"十、最小可實作子"])</script><script>self.__next_f.push([1,"集建議\"}]\n82:[\"$\",\"p\",null,{\"children\":\"若需要實作與 AlphaGeometry 思路相容的最小版本，可優先支援以下 action：\"}]\n83:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"triangle\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"on_line\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"on_tline\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"on_pline\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"intersection_ll\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"midpoint\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"foot\"}]}],\"\\n\"]}]\n84:[\"$\",\"p\",null,{\"children\":\"並至少支援以下 predicate：\"}]\n85:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"coll\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"perp\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"para\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"cong\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"cyclic\"}]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[\"$\",\"code\",null,{\"children\":\"eqangle\"}]}],\"\\n\"]}]\n86:[\"$\",\"p\",null,{\"children\":\"這是一個較小但可工作的協議核心。\"}]\n87:[\"$\",\"br\",null,{}]\n88:[\"$\",\"br\",null,{}]\n89:[\"$\",\"h2\",null,{\"children\":\"十一、協議本質\"}]\n8a:[\"$\",\"p\",null,{\"children\":\"AlphaGeometry DSL 可以概括為：\"}]\n8b:[\"$\",\"pre\",null,{\"children\":[\"$\",\"code\",null,{\"className\":\"language-txt\",\"children\":\"Geometry Construction DSL\\n+ Predicate Interface\\n+ Rule-System Input Layer\\n\"}]}]\n8c:[\"$\",\"p\",null,{\"children\":\"它的主要價值不在於「描述圖形」，而在於把幾何問題壓縮成一個可執行、可驗證、可推理的協議層。\"}]\n8d:[\"$\",\"br\",null,{}]\n8e:[\"$\",\"br\",null,{}]\n8f:[\"$\",\"h2\",null,{\"children\":\"十二、靠譜推薦：大角幾何（Dino-GSP）\"}]\n90:[\"$\",\"p\",null,{\"children\":[\"如果需要一個比 AlphaGeometry DS"])</script><script>self.__next_f.push([1,"L 更開放、面向產品與生態整合的幾何表達環境，可以看我推出的 \",[\"$\",\"a\",null,{\"href\":\"/zh-tw/products/dino-gsp\",\"children\":\"大角幾何（Dino-GSP）\"}],\"。\"]}]\n91:[\"$\",\"p\",null,{\"children\":\"它同樣把幾何對象表示為可執行結構，並且也定義了自己的 DSL 與約束表示層，用於支援：\"}]\n92:[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"更開放的幾何構造與編輯流程\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"面向教學、內容生產與 AI 幾何應用的生態接入\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"圖形生成、約束驗證、輔助結構構造等可程式化能力\"}],\"\\n\"]}]\n93:[\"$\",\"p\",null,{\"children\":\"如果把 AlphaGeometry DSL 看成偏求解器與研究系統內部協議，大角幾何則更偏向可擴展產品層與開放生態介面。\"}]\n94:[\"$\",\"br\",null,{}]\n95:[\"$\",\"br\",null,{}]\n"])</script></body></html>
