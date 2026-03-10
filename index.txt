@@ -1,0 +1,94 @@
+1:"$Sreact.fragment"
+2:I[5165,["177","static/chunks/app/layout-334fdbf41ae17d73.js"],""]
+3:I[5341,[],""]
+4:I[25,[],""]
+5:I[1848,["345","static/chunks/app/not-found-6a873e9b606a9eb4.js"],"default"]
+6:I[2567,["177","static/chunks/app/layout-334fdbf41ae17d73.js"],"MotionBootstrap"]
+7:I[9750,["177","static/chunks/app/layout-334fdbf41ae17d73.js"],"AnalyticsBootstrap"]
+e:I[4431,[],""]
+:HL["/_next/static/css/3dcf45341e2f7fae.css","style"]
+8:T89e,(() => {
+  if (typeof window === "undefined") return;
+  if (window.location.pathname !== "/") return;
+  const storageKey = "preferred-locale";
+  const supported = ["en", "zh-cn", "zh-tw", "es"];
+  const normalize = (value) => String(value || "").trim().toLowerCase().replace(/_/g, "-");
+  const matchLocale = (tag) => {
+    const normalized = normalize(tag);
+    if (!normalized) return null;
+    if (
+      normalized.startsWith("zh-hans") ||
+      normalized === "zh-cn" ||
+      normalized.startsWith("zh-cn-") ||
+      normalized === "zh-sg" ||
+      normalized.startsWith("zh-sg-")
+    ) {
+      return "zh-cn";
+    }
+    if (
+      normalized.startsWith("zh-hant") ||
+      normalized === "zh-tw" ||
+      normalized.startsWith("zh-tw-") ||
+      normalized === "zh-hk" ||
+      normalized.startsWith("zh-hk-") ||
+      normalized === "zh-mo" ||
+      normalized.startsWith("zh-mo-")
+    ) {
+      return "zh-tw";
+    }
+    if (normalized === "es" || normalized.startsWith("es-")) return "es";
+    if (normalized === "en" || normalized.startsWith("en-")) return "en";
+    return null;
+  };
+  const readPreferred = () => {
+    try {
+      const value = window.localStorage.getItem(storageKey);
+      return value && supported.includes(value) ? value : null;
+    } catch {
+      return null;
+    }
+  };
+  const writePreferred = (locale) => {
+    if (!locale || !supported.includes(locale)) return;
+    try {
+      window.localStorage.setItem(storageKey, locale);
+    } catch {}
+  };
+  const links = document.querySelectorAll("[data-preferred-locale]");
+  for (const link of links) {
+    link.addEventListener("click", () => writePreferred(link.getAttribute("data-preferred-locale")));
+  }
+  const preferred = readPreferred();
+  if (preferred) {
+    window.location.replace("/" + preferred);
+    return;
+  }
+  const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+    ? navigator.languages
+    : [navigator.language];
+  let resolved = "en";
+  for (const tag of browserLanguages) {
+    const matched = matchLocale(tag);
+    if (matched) {
+      resolved = matched;
+      break;
+    }
+  }
+  writePreferred(resolved);
+  window.location.replace("/" + resolved);
+})();0:{"P":null,"b":"po8k52RV55mAheCNi9aGR","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3dcf45341e2f7fae.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-theme":"forest-mint","children":[["$","head",null,{"children":[["$","link",null,{"rel":"stylesheet","href":"/editorial-kit/assets/css/tokens.css"}],["$","link",null,{"rel":"stylesheet","href":"/editorial-kit/assets/css/foundation.css"}],["$","link",null,{"rel":"stylesheet","href":"/editorial-kit/assets/css/motion.css"}],["$","$L2",null,{"id":"gtm-init","strategy":"beforeInteractive","children":"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NNJP6S5J');"}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":["$","iframe",null,{"src":"https://www.googletagmanager.com/ns.html?id=GTM-NNJP6S5J","height":"0","width":"0","style":{"display":"none","visibility":"hidden"}}]}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L5",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L2",null,{"src":"/editorial-kit/assets/js/theme-presets.js","strategy":"beforeInteractive"}],["$","$L2",null,{"src":"/editorial-kit/assets/js/motion-reveal.js","strategy":"beforeInteractive"}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","main",null,{"className":"container","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$8"}}],"$L9","$La","$Lb"]}],null,"$Lc"]}],{},null,false]},null,false],"$Ld",false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+f:I[5104,[],"OutletBoundary"]
+11:I[7158,[],"AsyncMetadataOutlet"]
+13:I[5104,[],"ViewportBoundary"]
+15:I[5104,[],"MetadataBoundary"]
+16:"$Sreact.suspense"
+9:["$","h1",null,{"children":"Luhui Dev"}]
+a:["$","p",null,{"children":"Select language / 选择语言 / 選擇語言 / Seleccionar idioma"}]
+b:["$","ul",null,{"children":[["$","li","en",{"children":["$","a",null,{"href":"/en","data-preferred-locale":"en","children":"English"}]}],["$","li","zh-cn",{"children":["$","a",null,{"href":"/zh-cn","data-preferred-locale":"zh-cn","children":"简体中文"}]}],["$","li","zh-tw",{"children":["$","a",null,{"href":"/zh-tw","data-preferred-locale":"zh-tw","children":"繁體中文"}]}],["$","li","es",{"children":["$","a",null,{"href":"/es","data-preferred-locale":"es","children":"Español"}]}]]}]
+c:["$","$Lf",null,{"children":["$L10",["$","$L11",null,{"promise":"$@12"}]]}]
+d:["$","$1","h",{"children":[null,[["$","$L13",null,{"children":"$L14"}],null],["$","$L15",null,{"children":["$","div",null,{"hidden":true,"children":["$","$16",null,{"fallback":null,"children":"$L17"}]}]}]]}]
+14:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+10:null
+18:I[6505,[],"IconMark"]
+12:{"metadata":[["$","title","0",{"children":"Language / 语言 / Idioma"}],["$","meta","1",{"name":"description","content":"Education x AI products for geometry, benchmark tracking, and structured reasoning systems."}],["$","meta","2",{"name":"robots","content":"noindex, follow"}],["$","link","3",{"rel":"canonical","href":"https://luhuidev.com/en"}],["$","link","4",{"rel":"alternate","hrefLang":"en","href":"https://luhuidev.com/en"}],["$","link","5",{"rel":"alternate","hrefLang":"zh-cn","href":"https://luhuidev.com/zh-cn"}],["$","link","6",{"rel":"alternate","hrefLang":"zh-tw","href":"https://luhuidev.com/zh-tw"}],["$","link","7",{"rel":"alternate","hrefLang":"es","href":"https://luhuidev.com/es"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://luhuidev.com/en"}],["$","link","9",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","10",{"rel":"icon","href":"/icon.png?8bcfac582abffbe1","type":"image/png","sizes":"512x512"}],["$","$L18","11",{}]],"error":null,"digest":"$undefined"}
+17:"$12:metadata"

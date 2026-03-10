@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (en)</title>
+<link>https://luhuidev.com/en</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[AlphaGeometry DSL Guide: Google Geometry DSL, defs.txt Actions, and Predicates]]></title>
+<link>https://luhuidev.com/en/essays/google-alphageometry-dsl-guide</link>
+<guid>https://luhuidev.com/en/essays/google-alphageometry-dsl-guide</guid>
+<pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[A technical guide to AlphaGeometry DSL covering problem format, defs.txt action definitions, geometric predicates, rules.txt reasoning, and construction workflow for geometry solvers, dataset generation, and AlphaGeometry reproduction.]]></description>
+</item>
+<item>
+<title><![CDATA[AlphaGeometry2 Deep Dive: How Does Google AI Solve IMO Geometry Problems?]]></title>
+<link>https://luhuidev.com/en/essays/alphageometry2-google-ai-solve-imo-geometry-problems</link>
+<guid>https://luhuidev.com/en/essays/alphageometry2-google-ai-solve-imo-geometry-problems</guid>
+<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[How AlphaGeometry2 combines geometry reasoning, auxiliary-line search, and symbolic deduction to solve IMO geometry problems, with engineering takeaways for math AI builders.]]></description>
+</item>
+<item>
+<title><![CDATA[Google DeepMind Aletheia: A Deep Dive into a Fully Autonomous Math Research Agent]]></title>
+<link>https://luhuidev.com/en/essays/google-deepmind-aletheia-autonomous-math-research-agent</link>
+<guid>https://luhuidev.com/en/essays/google-deepmind-aletheia-autonomous-math-research-agent</guid>
+<pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[From AlphaGo to AlphaGeometry, AlphaProof, and Aletheia, this essay unpacks the engineering value of a verifiable autonomous math research loop.]]></description>
+</item>
+<item>
+<title><![CDATA[HKU CodePlot-CoT Deep Dive: Visual Reasoning or Geometric Reasoning?]]></title>
+<link>https://luhuidev.com/en/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/en/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[From executable plotting to geometric proof, a structural analysis of CodePlot-CoT's strengths and boundaries.]]></description>
+</item>
+<item>
+<title><![CDATA[AI and Math: Technical Paths, Frontiers, and What Comes Next (2026)]]></title>
+<link>https://luhuidev.com/en/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</link>
+<guid>https://luhuidev.com/en/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</guid>
+<pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[A 2026 view of AI for math, from benchmark credibility and capability tiers to architecture-heavy solving systems and real product opportunities.]]></description>
+</item>
+</channel>
+</rss>
