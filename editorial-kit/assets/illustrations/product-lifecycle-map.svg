@@ -1,0 +1,22 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F8F6F1"/>
+  <rect x="104" y="90" width="992" height="620" rx="28" fill="#FCFBF8" stroke="#D8D4CA" stroke-width="2"/>
+  <path d="M230 392C230 268 330 168 454 168C578 168 678 268 678 392C678 516 578 616 454 616C330 616 230 516 230 392Z" fill="#FFFFFF" stroke="#D8D4CA" stroke-width="2"/>
+  <path d="M522 392C522 355 491 324 454 324C417 324 386 355 386 392C386 429 417 460 454 460C491 460 522 429 522 392Z" fill="#EBF1FF" stroke="#C5D5FB" stroke-width="2"/>
+  <rect x="740" y="168" width="286" height="108" rx="12" fill="#FFFFFF" stroke="#D8D4CA"/>
+  <rect x="740" y="292" width="286" height="108" rx="12" fill="#FFFFFF" stroke="#D8D4CA"/>
+  <rect x="740" y="416" width="286" height="108" rx="12" fill="#FFFFFF" stroke="#D8D4CA"/>
+  <rect x="740" y="540" width="286" height="108" rx="12" fill="#FFFFFF" stroke="#D8D4CA"/>
+  <path d="M678 272H740" stroke="#1A58D9" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M678 352H740" stroke="#1A58D9" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M678 432H740" stroke="#1A58D9" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M678 512H740" stroke="#1A58D9" stroke-width="3" stroke-dasharray="8 8"/>
+  <circle cx="338" cy="250" r="16" fill="#1A58D9"/>
+  <circle cx="430" cy="204" r="16" fill="#1A58D9" fill-opacity="0.84"/>
+  <circle cx="530" cy="214" r="16" fill="#1A58D9" fill-opacity="0.68"/>
+  <circle cx="588" cy="298" r="16" fill="#1A58D9" fill-opacity="0.52"/>
+  <circle cx="574" cy="392" r="16" fill="#1A58D9" fill-opacity="0.44"/>
+  <circle cx="550" cy="510" r="16" fill="#1A58D9" fill-opacity="0.56"/>
+  <circle cx="440" cy="574" r="16" fill="#1A58D9" fill-opacity="0.74"/>
+  <circle cx="332" cy="534" r="16" fill="#1A58D9" fill-opacity="0.9"/>
+</svg>

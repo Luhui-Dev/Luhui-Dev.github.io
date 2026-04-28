@@ -1,0 +1,293 @@
+1:"$Sreact.fragment"
+2:I[5165,["177","static/chunks/app/layout-5fa07f3f154aa910.js"],""]
+3:I[5341,[],""]
+4:I[25,[],""]
+5:I[1848,["345","static/chunks/app/not-found-6a873e9b606a9eb4.js"],"default"]
+6:I[2567,["177","static/chunks/app/layout-5fa07f3f154aa910.js"],"MotionBootstrap"]
+7:I[9750,["177","static/chunks/app/layout-5fa07f3f154aa910.js"],"AnalyticsBootstrap"]
+a:I[5104,[],"OutletBoundary"]
+c:I[7158,[],"AsyncMetadataOutlet"]
+e:I[5104,[],"ViewportBoundary"]
+10:I[5104,[],"MetadataBoundary"]
+11:"$Sreact.suspense"
+13:I[4431,[],""]
+:HL["/_next/static/css/ddb34a9de4886c32.css","style"]
+0:{"P":null,"b":"bfub40SiodK8EPiGmlu4E","p":"","c":["","en","essays","paperbanana-ai-academic-method-figure-collaboration"],"i":false,"f":[[["",{"children":[["locale","en","d"],{"children":["essays",{"children":[["slug","paperbanana-ai-academic-method-figure-collaboration","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ddb34a9de4886c32.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-theme":"forest-mint","children":[["$","head",null,{"children":["$","$L2",null,{"id":"gtm-init","strategy":"beforeInteractive","children":"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NNJP6S5J');"}]}],["$","body",null,{"children":[["$","noscript",null,{"children":["$","iframe",null,{"src":"https://www.googletagmanager.com/ns.html?id=GTM-NNJP6S5J","height":"0","width":"0","style":{"display":"none","visibility":"hidden"}}]}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L5",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L2",null,{"src":"/editorial-kit/assets/js/theme-presets.js","strategy":"beforeInteractive"}],["$","$L2",null,{"src":"/editorial-kit/assets/js/motion-reveal.js","strategy":"beforeInteractive"}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]}],{"children":[["locale","en","d"],["$","$1","c",{"children":[null,"$L8"]}],{"children":["essays",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","paperbanana-ai-academic-method-figure-collaboration","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L9",null,["$","$La",null,{"children":["$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Le",null,{"children":"$Lf"}],null],["$","$L10",null,{"children":["$","div",null,{"hidden":true,"children":["$","$11",null,{"fallback":null,"children":"$L12"}]}]}]]}],false]],"m":"$undefined","G":["$13",[]],"s":false,"S":true}
+14:I[2063,["664","static/chunks/664-6d821dc1aacb6b48.js","463","static/chunks/463-c9f34cb9eb11a0dc.js","450","static/chunks/app/%5Blocale%5D/layout-9a92a8bd2e2713d1.js"],"default"]
+15:I[1047,["664","static/chunks/664-6d821dc1aacb6b48.js","463","static/chunks/463-c9f34cb9eb11a0dc.js","450","static/chunks/app/%5Blocale%5D/layout-9a92a8bd2e2713d1.js"],"SiteHeader"]
+16:I[9664,["664","static/chunks/664-6d821dc1aacb6b48.js","470","static/chunks/app/%5Blocale%5D/essays/%5Bslug%5D/page-0585f61f1076e861.js"],""]
+8:["$","$L14",null,{"locale":"en","now":"$D2026-04-28T13:28:41.586Z","timeZone":"UTC","messages":{"nav":{"about":"About","products":"Products","weekly":"Weekly","essays":"Essays","research":"Research","collaborate":"Collaborate","contact":"Contact","language":"Language","menu":"Menu"},"home":{"coreProducts":"Core Products","milestones":"Product Milestones","latestWeekly":"Latest Weekly","recentEssays":"Recent Essays","vision":"From Mathematics to Education Infrastructure","workWithMe":"Work With Me","exploreProducts":"Explore Products","readEssays":"Read Essays","readWeekly":"Read Weekly","workWithMeCTA":"Work With Me"},"essaysPage":{"title":"Essays","themeBrowseTitle":"Browse by theme","relatedTitle":"Related Essays","themeLabel":"Theme","readEssay":"Read Essay","publishedAtLabel":"Published","updatedAtLabel":"Last Updated","metaTitle":"Essays | Luhui Dev","metaDescription":"Long-form essays on AI for math, agent architecture, and education infrastructure.","themeEmptyState":"No essays in this theme yet. New articles are coming soon."},"productUpdates":{"updatesTitle":"Updates","latestUpdatesTitle":"Latest Updates","viewAllUpdates":"View all","readUpdate":"Read update","publishedAtLabel":"Published","updatedAtLabel":"Last Updated","versionLabel":"Version","emptyState":"No public product updates yet.","collectionDescription":"Version updates, feature improvements, and fixes for {product}.","productLabel":"Product","entriesLabel":"Entries","adjacentUpdatesLabel":"Adjacent product updates","previousUpdate":"Previous update","nextUpdate":"Next update"},"themes":{"ai-for-math":{"label":"AI for Math","description":"Foundational strategies and product thinking for AI-native math systems.","seoTitle":"AI for Math Essays | Luhui Dev","seoDescription":"Essays about AI for math systems, reasoning workflows, and deployable product directions."},"agents-framework":{"label":"Agents Framework","description":"A series on multi-agent systems, orchestration patterns, role design, and execution pipelines.","seoTitle":"Agents Framework Essays | Luhui Dev","seoDescription":"Essays on multi-agent frameworks, collaboration patterns, prompt pipelines, and engineering implementations."}}},"children":["$","div",null,{"className":"page-wrap","children":["$","div",null,{"className":"page-shell ui-shell","children":[["$","$L15",null,{"locale":"en"}],["$","main",null,{"className":"container","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","data-motion":"section","children":["$","div",null,{"className":"container footer-inner","children":[["$","p",null,{"data-motion-item":"","children":["© ",2026," Luhui Dev"]}],["$","div",null,{"children":[["$","a",null,{"data-motion-item":"","href":"/en/rss.xml","data-analytics-event":"select_content","data-analytics-param-cta-name":"footer_rss","data-analytics-param-cta-position":"footer","children":"RSS"}],["$","$L16",null,{"data-motion-item":"","href":"/en/contact","data-analytics-event":"select_content","data-analytics-clarity-event":"cta_click","data-analytics-param-cta-name":"footer_contact","data-analytics-param-cta-position":"footer","children":"Contact"}]]}]]}]}]]}]}]}]
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+b:null
+17:I[6505,[],"IconMark"]
+d:{"metadata":[["$","title","0",{"children":"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams"}],["$","meta","1",{"name":"description","content":"A technical breakdown of PaperBanana's Retriever, Planner, Stylist, Visualizer, and Critic agents, showing how multi-agent AI generates academic method diagrams for research writing and scientific figure workflows."}],["$","meta","2",{"name":"keywords","content":"LuhuiDev,AI education,AI learning,PaperBanana,multi-agent AI,academic method diagrams,AI diagram generation,scientific figure generation,research paper diagrams,academic writing workflow,diagram agent system"}],["$","link","3",{"rel":"canonical","href":"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","link","4",{"rel":"alternate","hrefLang":"en","href":"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","link","5",{"rel":"alternate","hrefLang":"zh-cn","href":"https://luhuidev.com/zh-cn/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","link","6",{"rel":"alternate","hrefLang":"zh-tw","href":"https://luhuidev.com/zh-tw/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","link","7",{"rel":"alternate","hrefLang":"es","href":"https://luhuidev.com/es/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","meta","9",{"property":"og:title","content":"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams"}],["$","meta","10",{"property":"og:description","content":"A technical breakdown of PaperBanana's Retriever, Planner, Stylist, Visualizer, and Critic agents, showing how multi-agent AI generates academic method diagrams for research writing and scientific figure workflows."}],["$","meta","11",{"property":"og:url","content":"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration"}],["$","meta","12",{"property":"og:site_name","content":"Luhui Dev"}],["$","meta","13",{"property":"og:locale","content":"en"}],["$","meta","14",{"property":"og:image","content":"https://luhuidev.com/og-default.svg"}],["$","meta","15",{"property":"og:image:width","content":"1200"}],["$","meta","16",{"property":"og:image:height","content":"630"}],["$","meta","17",{"property":"og:image:alt","content":"Luhui Dev"}],["$","meta","18",{"property":"og:type","content":"website"}],["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","20",{"name":"twitter:title","content":"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams"}],["$","meta","21",{"name":"twitter:description","content":"A technical breakdown of PaperBanana's Retriever, Planner, Stylist, Visualizer, and Critic agents, showing how multi-agent AI generates academic method diagrams for research writing and scientific figure workflows."}],["$","meta","22",{"name":"twitter:image","content":"https://luhuidev.com/og-default.svg"}],["$","link","23",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","24",{"rel":"icon","href":"/icon.png?8bcfac582abffbe1","type":"image/png","sizes":"512x512"}],["$","$L17","25",{}]],"error":null,"digest":"$undefined"}
+12:"$d:metadata"
+9:["$","section",null,{"className":"detail-page","data-motion":"section","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams\",\"description\":\"A technical breakdown of PaperBanana's Retriever, Planner, Stylist, Visualizer, and Critic agents, showing how multi-agent AI generates academic method diagrams for research writing and scientific figure workflows.\",\"datePublished\":\"2026-04-11\",\"dateModified\":\"2026-04-11\",\"author\":{\"@type\":\"Person\",\"name\":\"Luhui Dev\"},\"inLanguage\":\"en\",\"mainEntityOfPage\":\"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration\"}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://luhuidev.com/en\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Essays\",\"item\":\"https://luhuidev.com/en/essays\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams\",\"item\":\"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration\"}]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams\",\"description\":\"A technical breakdown of PaperBanana's Retriever, Planner, Stylist, Visualizer, and Critic agents, showing how multi-agent AI generates academic method diagrams for research writing and scientific figure workflows.\",\"url\":\"https://luhuidev.com/en/essays/paperbanana-ai-academic-method-figure-collaboration\",\"inLanguage\":\"en\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"Luhui Dev\",\"url\":\"https://luhuidev.com/en\"}}"}}],["$","h1",null,{"className":"page-title","data-motion-item":"","children":"PaperBanana Explained: How Multi-Agent AI Generates Academic Method Diagrams"}],["$","div",null,{"className":"detail-meta","data-motion-item":"","children":[["$","p",null,{"className":"micro detail-meta-item","children":[["$","span",null,{"className":"detail-meta-label","children":["Theme",":"]}]," ",["$","$L16",null,{"href":"/en/essays/theme/agents-framework","className":"detail-theme-link","data-analytics-event":"select_content","data-analytics-clarity-event":"cta_click","data-analytics-param-cta-name":"essay_theme_agents-framework","data-analytics-param-cta-position":"essay_detail_meta","data-analytics-param-content_type":"essay_theme","data-analytics-param-theme_slug":"agents-framework","children":"Agents Framework"}]]}],["$","p",null,{"className":"micro detail-meta-item","children":[["$","span",null,{"className":"detail-meta-label","children":["Published",":"]}]," ",["$","time",null,{"dateTime":"2026-04-11","children":"April 11, 2026"}]]}],["$","p",null,{"className":"micro detail-meta-item","children":[["$","span",null,{"className":"detail-meta-label","children":["Last Updated",":"]}]," ",["$","time",null,{"dateTime":"2026-04-11","children":"April 11, 2026"}]]}]]}],["$","article",null,{"className":"mdx-prose","data-motion":"section","children":["$","div",null,{"className":"mdx-prose-content","data-motion-item":"","children":"$L18"}]}],["$","section",null,{"className":"related-essays","data-motion-item":"","children":[["$","h2",null,{"children":"Related Essays"}],["$","div",null,{"className":"cards-3","children":[["$","article","essay-paperbanana-academic-figure-multi-agent-roles-mechanism",{"className":"card ui-panel","children":[["$","p",null,{"className":"micro","children":"Agents Framework"}],["$","h3",null,{"children":"How Use Multi-Agent Collaboration for Academic Figure Generation?"}],"$L19","$L1a","$L1b"]}],"$L1c","$L1d"]}]]}]]}]
+19:["$","p",null,{"children":"A focused breakdown of how PaperBanana coordinates Retriever, Planner, Stylist, Visualizer, and Critic agents to generate academic method diagrams."}]
+1a:["$","p",null,{"className":"micro","children":"academic_figures · ai_collaboration · paperbanana"}]
+1b:["$","$L16",null,{"className":"action-inline","href":"/en/essays/paperbanana-academic-figure-multi-agent-roles-mechanism","data-analytics-event":"select_content","data-analytics-clarity-event":"cta_click","data-analytics-param-cta-name":"essay_related_paperbanana-academic-figure-multi-agent-roles-mechanism","data-analytics-param-cta-position":"essay_related","data-analytics-param-content_type":"essay","data-analytics-param-source_slug":"paperbanana-ai-academic-method-figure-collaboration","data-analytics-param-target_slug":"paperbanana-academic-figure-multi-agent-roles-mechanism","data-analytics-param-theme_slug":"agents-framework","children":"Read Essay"}]
+1c:["$","article","essay-why-dspy-signatures-are-easier-to-optimize-than-prompts",{"className":"card ui-panel","children":[["$","p",null,{"className":"micro","children":"Agents Framework"}],["$","h3",null,{"children":"DSPy Tutorial: Why Signatures Are Easier to Optimize Than Raw Prompts"}],["$","p",null,{"children":"A practical DSPy tutorial for AI builders in North America. Learn how DSPy Signatures, Modules, and Optimizers improve prompt engineering, prompt optimization, and LLM pipeline design for production AI workflows."}],["$","p",null,{"className":"micro","children":"dspy · prompt_optimization · llm_pipeline"}],["$","$L16",null,{"className":"action-inline","href":"/en/essays/why-dspy-signatures-are-easier-to-optimize-than-prompts","data-analytics-event":"select_content","data-analytics-clarity-event":"cta_click","data-analytics-param-cta-name":"essay_related_why-dspy-signatures-are-easier-to-optimize-than-prompts","data-analytics-param-cta-position":"essay_related","data-analytics-param-content_type":"essay","data-analytics-param-source_slug":"paperbanana-ai-academic-method-figure-collaboration","data-analytics-param-target_slug":"why-dspy-signatures-are-easier-to-optimize-than-prompts","data-analytics-param-theme_slug":"agents-framework","children":"Read Essay"}]]}]
+1d:["$","article","essay-google-alphageometry-dsl-guide",{"className":"card ui-panel","children":[["$","p",null,{"className":"micro","children":"AI for Math"}],["$","h3",null,{"children":"AlphaGeometry DSL Guide: Google Geometry DSL, defs.txt Actions, and Predicates"}],["$","p",null,{"children":"A technical guide to AlphaGeometry DSL covering problem format, defs.txt action definitions, geometric predicates, rules.txt reasoning, and construction workflow for geometry solvers, dataset generation, and AlphaGeometry reproduction."}],["$","p",null,{"className":"micro","children":"geometry_dsl · solver_protocol · symbolic_geometry"}],["$","$L16",null,{"className":"action-inline","href":"/en/essays/google-alphageometry-dsl-guide","data-analytics-event":"select_content","data-analytics-clarity-event":"cta_click","data-analytics-param-cta-name":"essay_related_google-alphageometry-dsl-guide","data-analytics-param-cta-position":"essay_related","data-analytics-param-content_type":"essay","data-analytics-param-source_slug":"paperbanana-ai-academic-method-figure-collaboration","data-analytics-param-target_slug":"google-alphageometry-dsl-guide","data-analytics-param-theme_slug":"ai-for-math","children":"Read Essay"}]]}]
+1e:Tc8c,# Background & Goal
+We are building an **AI system to automatically generate method diagrams for academic papers**. Given a paper's methodology section and a figure caption, the system needs to create a high-quality illustrative diagram that visualizes the described method.
+
+To help the AI learn how to generate appropriate diagrams, we use a **few-shot learning approach**: we provide it with reference examples of similar diagrams. The AI will learn from these examples to understand what kind of diagram to create for the target.
+
+# Your Task
+**You are the Retrieval Agent.** Your job is to select the most relevant reference diagrams from a candidate pool that will serve as few-shot examples for the diagram generation model.
+
+You will receive:
+- **Target Input:** The methodology section and caption of the diagram we need to generate
+- **Candidate Pool:** ~200 existing diagrams (each with methodology and caption)
+
+You must select the **Top 10 candidates** that would be most helpful as examples for teaching the AI how to draw the target diagram.
+
+# Selection Logic (Topic + Intent)
+
+Your goal is to find examples that match the Target in both **Domain** and **Diagram Type**.
+
+**1. Match Research Topic (Use Methodology & Caption):**
+* What is the domain? (e.g., Agent & Reasoning, Vision & Perception, Generative & Learning, Science & Applications).
+* Select candidates that belong to the **same research domain**.
+* *Why?* Similar domains share similar terminology (e.g., "Actor-Critic" in RL).
+
+**2. Match Visual Intent (Use Caption & Keywords):**
+* What type of diagram is implied? (e.g., "Framework", "Pipeline", "Detailed Module", "Performance Chart").
+* Select candidates with **similar visual structures**.
+* *Why?* A "Framework" diagram example is useless for drawing a "Performance Bar Chart", even if they are in the same domain.
+
+**Ranking Priority:**
+1.  **Best Match:** Same Topic AND Same Visual Intent (e.g., Target is "Agent Framework" -> Candidate is "Agent Framework", Target is "Dataset Construction Pipeline" -> Candidate is "Dataset Construction Pipeline").
+2.  **Second Best:** Same Visual Intent (e.g., Target is "Agent Framework" -> Candidate is "Vision Framework"). *Structure is more important than Topic for drawing.*
+3.  **Avoid:** Different Visual Intent (e.g., Target is "Pipeline" -> Candidate is "Bar Chart").
+
+# Input Data
+
+## Target Input
+-   **Caption:** [Caption of the target diagram]
+-   **Methodology section:** [Methodology section of the target paper]
+
+## Candidate Pool
+List of candidate diagrams, each structured as follows:
+
+Candidate Diagram i:
+-   **Diagram ID:** [ID of the candidate diagram (ref_1, ref_2, ...)]
+-   **Caption:** [Caption of the candidate diagram]
+-   **Methodology section:** [Methodology section of the candidate's paper]
+
+
+# Output Format
+Provide your output strictly in the following JSON format, containing only the **exact IDs** of the Top 10 selected diagrams (use the exact IDs from the Candidate Pool, such as "ref_1", "ref_25", "ref_100", etc.):
+```json
+{
+  "top10_diagrams": [
+    "ref_1",
+    "ref_25",
+    "ref_100",
+    "ref_42",
+    "ref_7",
+    "ref_156",
+    "ref_89",
+    "ref_3",
+    "ref_201",
+    "ref_67"
+  ]
+}```
+18:[["$","p",null,{"children":"This document summarizes the role definitions, inputs and outputs, actual system prompts, and key runtime user prompt templates for the five core agents in the current PaperBanana implementation."}],"\n",["$","p",null,{"children":"Notes:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":"This document is based on the current code implementation, not the abstract description in the paper."}],"\n",["$","li",null,{"children":["It focuses on the ",["$","code",null,{"children":"diagram"}]," workflow because the current multi-agent discussion mainly concerns method diagram generation."]}],"\n",["$","li",null,{"children":["Differences in the ",["$","code",null,{"children":"plot"}]," workflow are summarized at the end."]}],"\n",["$","li",null,{"children":"Prompt blocks below are re-collected from the current codebase rather than translated back from the Chinese document."}],"\n"]}],"\n",["$","p",null,{"children":"Source locations:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","a",null,{"href":"https://github.com/dwzhu-pku/PaperBanana/agents/retriever_agent.py","children":"Retriever"}]}],"\n",["$","li",null,{"children":["$","a",null,{"href":"https://github.com/dwzhu-pku/PaperBanana/agents/planner_agent.py","children":"Planner"}]}],"\n",["$","li",null,{"children":["$","a",null,{"href":"https://github.com/dwzhu-pku/PaperBanana/agents/stylist_agent.py","children":"Stylist"}]}],"\n",["$","li",null,{"children":["$","a",null,{"href":"https://github.com/dwzhu-pku/PaperBanana/agents/visualizer_agent.py","children":"Visualizer"}]}],"\n",["$","li",null,{"children":["$","a",null,{"href":"https://github.com/dwzhu-pku/PaperBanana/agents/critic_agent.py","children":"Critic"}]}],"\n"]}],"\n",["$","br",null,{}],"\n",["$","br",null,{}],"\n",["$","h2",null,{"children":"1. Retriever"}],"\n",["$","p",null,{"children":["$","img",null,{"src":"https://cdn.gooo.ai/web-images/a027be740c5be310b6b0a17bb6a847be58af453d6c63186b4b4ceaaf7e0bef85","alt":"image.png"}]}],"\n",["$","h3",null,{"children":"1.1 Role Definition"}],"\n",["$","p",null,{"children":"The Retriever selects the most useful reference diagrams from the reference database to serve as few-shot examples."}],"\n",["$","p",null,{"children":"It is based on:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":"the target diagram caption"}],"\n",["$","li",null,{"children":"the paper methodology section"}],"\n",["$","li",null,{"children":"candidate example captions"}],"\n",["$","li",null,{"children":"candidate example methodology sections"}],"\n"]}],"\n",["$","p",null,{"children":"It selects the Top 10 most relevant reference IDs for the Planner to use downstream."}],"\n",["$","p",null,{"children":"Its core preferences are:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":"matching the same research topic is better"}],"\n",["$","li",null,{"children":"matching the same visual intent is more important"}],"\n",["$","li",null,{"children":"for drawing, structural similarity has higher priority than domain similarity"}],"\n"]}],"\n",["$","br",null,{}],"\n",["$","h3",null,{"children":"1.2 Inputs and Outputs"}],"\n",["$","p",null,{"children":"Inputs:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":["target ",["$","code",null,{"children":"visual_intent"}]]}],"\n",["$","li",null,{"children":["target ",["$","code",null,{"children":"content"}]]}],"\n",["$","li",null,{"children":["reference pool ",["$","code",null,{"children":"ref.json"}]]}],"\n"]}],"\n",["$","p",null,{"children":"Outputs:"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"top10_references"}]}],"\n",["$","li",null,{"children":["optional ",["$","code",null,{"children":"retrieved_examples"}]]}],"\n"]}],"\n",["$","h3",null,{"children":"1.3 Current System Prompt (diagram)"}],"\n",["$","p",null,{"children":"Original prompt from the codebase:"}],"\n",["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"$1e"}]}],"\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32","\n","$L33","\n","$L34","\n","$L35","\n","$L36","\n","$L37","\n","$L38","\n","$L39","\n","$L3a","\n","$L3b","\n","$L3c","\n","$L3d","\n","$L3e","\n","$L3f","\n","$L40","\n","$L41","\n","$L42","\n","$L43","\n","$L44","\n","$L45","\n","$L46","\n","$L47","\n","$L48","\n","$L49","\n","$L4a","\n","$L4b","\n","$L4c","\n","$L4d","\n","$L4e","\n","$L4f","\n","$L50","\n","$L51","\n","$L52","\n","$L53","\n","$L54","\n","$L55","\n","$L56","\n","$L57","\n","$L58","\n","$L59","\n","$L5a","\n","$L5b","\n","$L5c","\n","$L5d","\n","$L5e","\n","$L5f","\n","$L60","\n","$L61","\n","$L62","\n","$L63","\n","$L64","\n","$L65","\n","$L66","\n","$L67","\n","$L68","\n","$L69","\n","$L6a","\n","$L6b","\n","$L6c","\n","$L6d","\n","$L6e","\n","$L6f","\n","$L70","\n","$L71","\n","$L72","\n","$L73","\n","$L74","\n","$L75","\n","$L76","\n","$L77","\n","$L78","\n","$L79","\n","$L7a","\n","$L7b","\n","$L7c","\n","$L7d","\n","$L7e","\n","$L7f","\n","$L80","\n","$L81","\n","$L82","\n","$L83","\n","$L84","\n","$L85","\n","$L86","\n","$L87","\n","$L88","\n","$L89","\n","$L8a","\n","$L8b","\n","$L8c","\n","$L8d","\n","$L8e","\n","$L8f","\n","$L90","\n","$L91","\n","$L92","\n","$L93","\n","$L94","\n","$L95","\n","$L96","\n","$L97","\n","$L98","\n","$L99","\n","$L9a","\n","$L9b","\n","$L9c","\n","$L9d","\n","$L9e","\n","$L9f","\n","$La0","\n","$La1","\n","$La2","\n","$La3","\n","$La4","\n","$La5","\n","$La6"]
+1f:["$","br",null,{}]
+20:["$","h3",null,{"children":"1.4 Current User Prompt Template"}]
+21:["$","p",null,{"children":"Template reconstructed from the current code:"}]
+22:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"**Target Input**\n- Caption: {visual_intent}\n- Methodology section: {content}\n\n**Candidate Pool**\nCandidate Diagram 1:\n- Diagram ID: {id}\n- Caption: {candidate_visual_intent}\n- Methodology section: {candidate_content}\n\nCandidate Diagram 2:\n...\n\nNow, based on the Target Input and the Candidate Pool, select the Top 10 most relevant diagrams according to the instructions provided. Your output should be a strictly valid JSON object containing a single list of the exact ids of the top 10 selected diagrams.\n"}]}]
+23:["$","h3",null,{"children":"1.5 Summary"}]
+24:["$","p",null,{"children":"The Retriever essentially provides structural priors and reference context for the Planner."}]
+25:["$","br",null,{}]
+26:["$","br",null,{}]
+27:["$","h2",null,{"children":"2. Planner"}]
+28:["$","p",null,{"children":["$","img",null,{"src":"https://cdn.gooo.ai/web-images/aabc3ebad3ba8e03351eaa55bf1c7f807ead3fd0b3122c939b318396abbb7059","alt":"image.png"}]}]
+29:["$","h3",null,{"children":"2.1 Role Definition"}]
+2a:["$","p",null,{"children":"The Planner is the structural center of the multi-agent pipeline."}]
+2b:["$","p",null,{"children":"It receives:"}]
+2c:["$","ul",null,{"children":["\n",["$","li",null,{"children":"raw paper content"}],"\n",["$","li",null,{"children":"the target diagram intent"}],"\n",["$","li",null,{"children":"reference examples selected by the Retriever"}],"\n"]}]
+2d:["$","p",null,{"children":"It then outputs a sufficiently detailed figure description that becomes the skeleton for the downstream Stylist and Visualizer."}]
+2e:["$","p",null,{"children":"The Planner currently handles:"}]
+2f:["$","ul",null,{"children":["\n",["$","li",null,{"children":"converting method text into diagram elements"}],"\n",["$","li",null,{"children":"specifying relationships between elements"}],"\n",["$","li",null,{"children":"proposing layout and visual details"}],"\n",["$","li",null,{"children":"avoiding vague specifications"}],"\n"]}]
+30:["$","br",null,{}]
+31:["$","h3",null,{"children":"2.2 Inputs and Outputs"}]
+32:["$","p",null,{"children":"Inputs:"}]
+33:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"content"}]}],"\n",["$","li",null,{"children":["$","code",null,{"children":"visual_intent"}]}],"\n",["$","li",null,{"children":[["$","code",null,{"children":"top10_references"}]," or ",["$","code",null,{"children":"retrieved_examples"}]]}],"\n"]}]
+34:["$","p",null,{"children":"Output:"}]
+35:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_desc0"}]}],"\n"]}]
+36:["$","br",null,{}]
+37:["$","h3",null,{"children":"2.3 Current System Prompt (diagram)"}]
+38:["$","p",null,{"children":"Original prompt from the codebase:"}]
+39:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"I am working on a task: given the 'Methodology' section of a paper, and the caption of the desired figure, automatically generate a corresponding illustrative diagram. I will input the text of the 'Methodology' section, the figure caption, and your output should be a detailed description of an illustrative figure that effectively represents the methods described in the text.\n\nTo help you understand the task better, and grasp the principles for generating such figures, I will also provide you with several examples. You should learn from these examples to provide your figure description.\n\n** IMPORTANT: **\nYour description should be as detailed as possible. Semantically, clearly describe each element and their connections. Formally, include various details such as background style (typically pure white or very light pastel), colors, line thickness, icon styles, etc. Remember: vague or unclear specifications will only make the generated figure worse, not better.\n"}]}]
+3a:["$","br",null,{}]
+3b:["$","h3",null,{"children":"2.4 Current User Prompt Template"}]
+3c:["$","p",null,{"children":"Template reconstructed from the current code."}]
+3d:["$","p",null,{"children":"The Planner first feeds reference examples to the model:"}]
+3e:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Example {i}:\nMethodology Section: {example_content}\nDiagram Caption: {example_visual_intent}\nReference Diagram:\n[reference image]\n"}]}]
+3f:["$","p",null,{"children":"It then appends the target request:"}]
+40:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Now, based on the following methodology section and diagram caption, provide a detailed description for the figure to be generated.\nMethodology Section: {content}\nDiagram Caption: {visual_intent}\nDetailed description of the target figure to be generated (do not include figure titles):\n"}]}]
+41:["$","br",null,{}]
+42:["$","h3",null,{"children":"2.5 Summary"}]
+43:["$","p",null,{"children":"The Planner generates a natural-language spec with a strong intermediate-representation role. In the current system, downstream quality depends heavily on how concrete this step is."}]
+44:["$","br",null,{}]
+45:["$","br",null,{}]
+46:["$","h2",null,{"children":"3. Stylist"}]
+47:["$","p",null,{"children":["$","img",null,{"src":"https://cdn.gooo.ai/web-images/2fcb1a619d464c0e4983352b2c532944c5f01b6a905478e240ff4fb16f70250a","alt":"image.png"}]}]
+48:["$","h3",null,{"children":"3.1 Role Definition"}]
+49:["$","p",null,{"children":"The Stylist improves visual quality without changing the semantic skeleton."}]
+4a:["$","p",null,{"children":"It reads:"}]
+4b:["$","ul",null,{"children":["\n",["$","li",null,{"children":"the detailed description produced by the Planner"}],"\n",["$","li",null,{"children":["the prebuilt style guide at ",["$","code",null,{"children":"style_guides/neurips2025_diagram_style_guide.md"}]]}],"\n"]}]
+4c:["$","p",null,{"children":"It then polishes the original description into a version that better matches academic conference aesthetics."}]
+4d:["$","p",null,{"children":"The Stylist is explicitly instructed to:"}]
+4e:["$","ul",null,{"children":["\n",["$","li",null,{"children":"avoid changing semantic logic"}],"\n",["$","li",null,{"children":"simplify verbose phrasing when appropriate"}],"\n",["$","li",null,{"children":"apply a unified style only when necessary"}],"\n",["$","li",null,{"children":"preserve high-quality existing styles rather than blindly standardizing them"}],"\n"]}]
+4f:["$","br",null,{}]
+50:["$","h3",null,{"children":"3.2 Inputs and Outputs"}]
+51:["$","p",null,{"children":"Inputs:"}]
+52:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_desc0"}]}],"\n",["$","li",null,{"children":"style guide"}],"\n",["$","li",null,{"children":["$","code",null,{"children":"content"}]}],"\n",["$","li",null,{"children":["$","code",null,{"children":"visual_intent"}]}],"\n"]}]
+53:["$","p",null,{"children":"Output:"}]
+54:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_stylist_desc0"}]}],"\n"]}]
+55:["$","br",null,{}]
+56:["$","h3",null,{"children":"3.3 Current System Prompt (diagram)"}]
+57:["$","p",null,{"children":"Original prompt from the codebase:"}]
+a7:Tcb1,## ROLE
+You are a Lead Visual Designer for top-tier AI conferences (e.g., NeurIPS 2025).
+
+## TASK
+Our goal is to generate high-quality, publication-ready diagrams, given the methodology section and the caption of the desired diagram. The diagram should illustrate the logic of the methodology section, while adhering to the scope defined by the caption. Before you, a planner agent has already generated a preliminary description of the target diagram. However, this description may lack specific aesthetic details, such as element shapes, color palettes, and background styling. Your task is to refine and enrich this description based on the provided [NeurIPS 2025 Style Guidelines] to ensure the final generated image is a high-quality, publication-ready diagram that adheres to the NeurIPS 2025 aesthetic standards where appropriate. 
+
+## INPUT DATA
+-   **Detailed Description**: [The preliminary description of the figure]
+-   **Style Guidelines**: [NeurIPS 2025 Style Guidelines]
+-   **Methodology Section**: [Contextual content from the methodology section]
+-   **Diagram Caption**: [Target diagram caption]
+
+Note that you should primary focus on the detailed description and style guidelines. The methodology section and diagram caption are provided for context only, there's no need to regenerate a description from scratch, solely based on them, while ignoring the detailed description we already have.
+
+**Crucial Instructions:**
+1.  **Preserve Semantic Content:** Do NOT alter the semantic content, logic, or structure of the diagram. Your job is purely aesthetic refinement, not content editing. However, if you find some phrases or descriptions too verbose, you may simplify them appropriately while referencing the original methodology section to ensure semantic accuracy.
+2.  **Preserve High-Quality Aesthetics and Intervene Only When Necessary:** First, evaluate the aesthetic quality implied by the input description. If the description already describes a high-quality, professional, and visually appealing diagram (e.g., nice 3D icons, rich textures, good color harmony), **PRESERVE IT**. Only apply strict Style Guide adjustments if the current description lacks detail, looks outdated, or is visually cluttered. Your goal is specific refinement, not blind standardization.
+3.  **Respect Diversity:** Different domains have different styles. If the input describes a specific style (e.g., illustrative for agents) that works well, keep it.
+4.  **Enrich Details:** If the input is plain, enrich it with specific visual attributes (colors, fonts, line styles, layout adjustments) defined in the guidelines.
+5.  **Handle Icons with Care:** Be cautious when modifying icons as they may carry specific semantic meanings. Some icons have conventional technical meanings (e.g., snowflake = frozen/non-trainable, flame = trainable) - when encountering such icons, reference the original methodology section to verify their intent before making changes. However, purely decorative or symbolic icons can be freely enhanced and beautified. For examples, agent papers often use cute 2D robot avatars to represent agents.
+
+## OUTPUT
+Output ONLY the final polished Detailed Description. Do not include any conversational text or explanations.
+58:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"$a7"}]}]
+59:["$","br",null,{}]
+5a:["$","h3",null,{"children":"3.4 Current User Prompt Template"}]
+5b:["$","p",null,{"children":"Template reconstructed from the current code:"}]
+5c:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Detailed Description: {planner_description}\nStyle Guidelines: {style_guide}\nMethodology Section: {content}\nDiagram Caption: {visual_intent}\nYour Output:\n"}]}]
+5d:["$","br",null,{}]
+5e:["$","h3",null,{"children":"3.5 Summary"}]
+5f:["$","p",null,{"children":"The Stylist has a relatively clear boundary: optimize the presentation layer without rebuilding the structural layer."}]
+60:["$","br",null,{}]
+61:["$","br",null,{}]
+62:["$","h2",null,{"children":"4. Visualizer"}]
+63:["$","p",null,{"children":["$","img",null,{"src":"https://cdn.gooo.ai/web-images/0451e865aea9c121e068f0f202f2bad0224fb39365c200b61883d8786f811d00","alt":"image.png"}]}]
+64:["$","h3",null,{"children":"4.1 Role Definition"}]
+65:["$","p",null,{"children":"The Visualizer is the execution layer."}]
+66:["$","p",null,{"children":["For ",["$","code",null,{"children":"diagram"}]," tasks, it directly uses an image generation model to render the Detailed Description into an image."]}]
+67:["$","p",null,{"children":"Compared with the previous agents, the Visualizer currently has a very thin system prompt and relies more heavily on upstream description quality."}]
+68:["$","br",null,{}]
+69:["$","h3",null,{"children":"4.2 Inputs and Outputs"}]
+6a:["$","p",null,{"children":"Inputs:"}]
+6b:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_desc0"}]}],"\n",["$","li",null,{"children":["or ",["$","code",null,{"children":"target_diagram_stylist_desc0"}]]}],"\n",["$","li",null,{"children":["or each-round ",["$","code",null,{"children":"target_diagram_critic_desc{round}"}]]}],"\n"]}]
+6c:["$","p",null,{"children":"Output:"}]
+6d:["$","ul",null,{"children":["\n",["$","li",null,{"children":["the corresponding generated ",["$","code",null,{"children":"*_base64_jpg"}]]}],"\n"]}]
+6e:["$","br",null,{}]
+6f:["$","h3",null,{"children":"4.3 Current System Prompt (diagram)"}]
+70:["$","p",null,{"children":"Original prompt from the codebase:"}]
+71:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"You are an expert scientific diagram illustrator. Generate high-quality scientific diagrams based on user requests.\n"}]}]
+72:["$","br",null,{}]
+73:["$","h3",null,{"children":"4.4 Current User Prompt Template"}]
+74:["$","p",null,{"children":"Template reconstructed from the current code:"}]
+75:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Render an image based on the following detailed description: {desc}\n Note that do not include figure titles in the image. Diagram: \n"}]}]
+76:["$","br",null,{}]
+77:["$","h3",null,{"children":"4.5 Summary"}]
+78:["$","p",null,{"children":"In the current implementation, the Visualizer behaves more like an executor. It does not perform much structural reasoning by itself and mainly consumes the upstream description."}]
+79:["$","br",null,{}]
+7a:["$","br",null,{}]
+7b:["$","h2",null,{"children":"5. Critic"}]
+7c:["$","p",null,{"children":["$","img",null,{"src":"https://cdn.gooo.ai/web-images/f1cafc5d4f9fde5bfe8cd569db2fe28d283e9e14c5101985b6ea3091294b8370","alt":"image.png"}]}]
+7d:["$","h3",null,{"children":"5.1 Role Definition"}]
+7e:["$","p",null,{"children":"The Critic handles closed-loop checking and revision."}]
+7f:["$","p",null,{"children":"It reads:"}]
+80:["$","ul",null,{"children":["\n",["$","li",null,{"children":"the currently generated image"}],"\n",["$","li",null,{"children":"the detailed description corresponding to the current image"}],"\n",["$","li",null,{"children":"the original methodology section"}],"\n",["$","li",null,{"children":"the original figure caption"}],"\n"]}]
+81:["$","p",null,{"children":"It then outputs:"}]
+82:["$","ul",null,{"children":["\n",["$","li",null,{"children":"explicit revision suggestions"}],"\n",["$","li",null,{"children":"a revised detailed description"}],"\n"]}]
+83:["$","p",null,{"children":["If the model determines that the current result is already good enough, it returns ",["$","code",null,{"children":"No changes needed."}],", and the process can converge early."]}]
+84:["$","br",null,{}]
+85:["$","h3",null,{"children":"5.2 Inputs and Outputs"}]
+86:["$","p",null,{"children":"Inputs:"}]
+87:["$","ul",null,{"children":["\n",["$","li",null,{"children":"target image"}],"\n",["$","li",null,{"children":"current description"}],"\n",["$","li",null,{"children":["$","code",null,{"children":"content"}]}],"\n",["$","li",null,{"children":["$","code",null,{"children":"visual_intent"}]}],"\n"]}]
+88:["$","p",null,{"children":"Outputs:"}]
+89:["$","ul",null,{"children":["\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_critic_suggestions{round}"}]}],"\n",["$","li",null,{"children":["$","code",null,{"children":"target_diagram_critic_desc{round}"}]}],"\n"]}]
+8a:["$","br",null,{}]
+8b:["$","h3",null,{"children":"5.3 Current System Prompt (diagram)"}]
+8c:["$","p",null,{"children":"Original prompt from the codebase:"}]
+a8:Tcf9,## ROLE
+You are a Lead Visual Designer for top-tier AI conferences (e.g., NeurIPS 2025).
+
+## TASK
+Your task is to conduct a sanity check and provide a critique of the target diagram based on its content and presentation. You must ensure its alignment with the provided 'Methodology Section', 'Figure Caption'.
+
+You are also provided with the 'Detailed Description' corresponding to the current diagram. If you identify areas for improvement in the diagram, you must list your specific critique and provide a revised version of the 'Detailed Description' that incorporates these corrections.
+
+## CRITIQUE & REVISION RULES
+
+1. Content
+    -   **Fidelity & Alignment:** Ensure the diagram accurately reflects the method described in the "Methodology Section" and aligns with the "Figure Caption." Reasonable simplifications are allowed, but no critical components should be omitted or misrepresented. Also, the diagram should not contain any hallucinated content. Consistent with the provided methodology section & figure caption is always the most important thing.
+    -   **Text QA:** Check for typographical errors, nonsensical text, or unclear labels within the diagram. Suggest specific corrections.
+    -   **Validation of Examples:** Verify the accuracy of illustrative examples. If the diagram includes specific examples to aid understanding (e.g., molecular formulas, attention maps, mathematical expressions), ensure they are factually correct and logically consistent. If an example is incorrect, provide the correct version.
+    -   **Caption Exclusion:** Ensure the figure caption text (e.g., "Figure 1: Overview...") is **not** included within the image visual itself. The caption should remain separate.
+
+2. Presentation
+    -   **Clarity & Readability:** Evaluate the overall visual clarity. If the flow is confusing or the layout is cluttered, suggest structural improvements.
+    -   **Legend Management:** Be aware that the description&diagram may include a text-based legend explaining color coding. Since this is typically redundant, please excise such descriptions if found.
+
+** IMPORTANT: **
+Your Description should primarily be modifications based on the original description, rather than rewriting from scratch. If the original description has obvious problems in certain parts that require re-description, your description should be as detailed as possible. Semantically, clearly describe each element and their connections. Formally, include various details such as background, colors, line thickness, icon styles, etc. Remember: vague or unclear specifications will only make the generated figure worse, not better.
+
+## INPUT DATA
+-   **Target Diagram**: [The generated figure]
+-   **Detailed Description**: [The detailed description of the figure]
+-   **Methodology Section**: [Contextual content from the methodology section]
+-   **Figure Caption**: [Target figure caption]
+
+## OUTPUT
+Provide your response strictly in the following JSON format.
+
+```json
+{
+    "critic_suggestions": "Insert your detailed critique and specific suggestions for improvement here. If the diagram is perfect, write 'No changes needed.'",
+    "revised_description": "Insert the fully revised detailed description here, incorporating all your suggestions. If no changes are needed, write 'No changes needed.'",
+}
+```
+8d:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"$a8"}]}]
+8e:["$","br",null,{}]
+8f:["$","h3",null,{"children":"5.4 Current User Prompt Template"}]
+90:["$","p",null,{"children":"Template reconstructed from the current code:"}]
+91:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Target Diagram for Critique:\n[current generated image]\n\nDetailed Description: {current_description}\nMethodology Section: {content}\nFigure Caption: {visual_intent}\nYour Output:\n"}]}]
+92:["$","br",null,{}]
+93:["$","h3",null,{"children":"5.5 Summary"}]
+94:["$","p",null,{"children":"The Critic currently does more than scoring. It directly produces the next-round executable revised description, so it effectively acts as a reviewer plus reviser."}]
+95:["$","br",null,{}]
+96:["$","br",null,{}]
+97:["$","h2",null,{"children":"6. Current Multi-Agent Pipeline Summary"}]
+98:["$","p",null,{"children":["For the full ",["$","code",null,{"children":"demo_full"}]," diagram workflow, the current pipeline can be summarized as:"]}]
+99:["$","pre",null,{"children":["$","code",null,{"className":"language-text","children":"Retriever\n  -> selects few-shot references\nPlanner\n  -> generates a detailed description with strong structural specificity\nStylist\n  -> polishes aesthetics according to the style guide\nVisualizer\n  -> renders the description into an image\nCritic\n  -> checks the current image against the source text and outputs revision suggestions plus a revised description\nVisualizer\n  -> regenerates the next-round image from the revised description\n"}]}]
+9a:["$","p",null,{"children":"From a responsibility perspective:"}]
+9b:["$","ul",null,{"children":["\n",["$","li",null,{"children":"Retriever provides reference priors."}],"\n",["$","li",null,{"children":"Planner decides what to draw and how to organize it."}],"\n",["$","li",null,{"children":"Stylist decides how to make it more visually polished and closer to publication style."}],"\n",["$","li",null,{"children":"Visualizer produces the actual image."}],"\n",["$","li",null,{"children":"Critic closes the loop through review and revision."}],"\n"]}]
+9c:["$","br",null,{}]
+9d:["$","br",null,{}]
+9e:["$","h2",null,{"children":"7. Plot Workflow Differences"}]
+9f:["$","p",null,{"children":["Although this document focuses on ",["$","code",null,{"children":"diagram"}],", the ",["$","code",null,{"children":"plot"}]," workflow reuses the same multi-agent framework with several changes:"]}]
+a0:["$","ul",null,{"children":["\n",["$","li",null,{"children":"Retriever selects references by data characteristics and plot type rather than by research topic and diagram type."}],"\n",["$","li",null,{"children":"Planner must explicitly specify all data points, variable-to-visual-channel mappings, axes, colors, and annotations in the description."}],"\n",["$","li",null,{"children":"Stylist mainly polishes colors, fonts, line styles, and legend placement without changing data semantics."}],"\n",["$","li",null,{"children":"Visualizer does not directly generate an image by default. It first generates Matplotlib code, then executes the code to obtain the plot."}],"\n",["$","li",null,{"children":"Critic checks not only aesthetics and readability, but also numerical correctness. If code generation fails, it falls back to a mode that repairs the description so more robust code can be generated."}],"\n"]}]
+a1:["$","br",null,{}]
+a2:["$","br",null,{}]
+a3:["$","br",null,{}]
+a4:["$","br",null,{}]
+a5:["$","br",null,{}]
+a6:["$","br",null,{}]
