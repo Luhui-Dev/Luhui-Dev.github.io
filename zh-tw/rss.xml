@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (zh-tw)</title>
+<link>https://luhuidev.com/zh-tw</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[Loopcraft 是什麼：從 Prompt Engineering 到 Agent Loop 系統設計]]></title>
+<link>https://luhuidev.com/zh-tw/essays/prompt-engineering-loopcraft-agent-loops</link>
+<guid>https://luhuidev.com/zh-tw/essays/prompt-engineering-loopcraft-agent-loops</guid>
+<pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Loopcraft 深度解析：為什麼 AI Agent 工程正在從單次 Prompt 優化，轉向任務觸發、驗證、重試、狀態保存和持續改進的 Agent Loop 系統設計。]]></description>
+</item>
+<item>
+<title><![CDATA[實踐分享：Agentic RAG 如何應對企業資料的真實混亂]]></title>
+<link>https://luhuidev.com/zh-tw/essays/agentic-rag-enterprise-data-real-world-messiness</link>
+<guid>https://luhuidev.com/zh-tw/essays/agentic-rag-enterprise-data-real-world-messiness</guid>
+<pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從一個客服工單的真實場景出發，拆解 Agentic RAG 的編排、查詢改寫、並行檢索、充足性判斷和綜合生成五個環節，分析跨系統權限邊界處理，以及路由策略、迭代深度、延遲權衡三個工程決策點。]]></description>
+</item>
+<item>
+<title><![CDATA[Claude Code 翻車復盤：Anthropic 三個生產事故暴露的 Agent 工程問題]]></title>
+<link>https://luhuidev.com/zh-tw/essays/anthropic-claude-code-production-incidents-agent-lessons</link>
+<guid>https://luhuidev.com/zh-tw/essays/anthropic-claude-code-production-incidents-agent-lessons</guid>
+<pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從 Anthropic Claude Code 三個生產事故復盤出發，分析 reasoning history、system prompt、快取、預設推理強度和真實生產測試對 AI Agent 工程的影響。]]></description>
+</item>
+<item>
+<title><![CDATA[DeepMind AlphaProof Nexus 拆解：AI 數學研究的 4 種系統範式]]></title>
+<link>https://luhuidev.com/zh-tw/essays/ai-driven-formal-proof-search-alphaproof-nexus</link>
+<guid>https://luhuidev.com/zh-tw/essays/ai-driven-formal-proof-search-alphaproof-nexus</guid>
+<pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 DeepMind AlphaProof Nexus 如何把 LLM、Lean、AlphaProof、演化搜尋和多 Agent 編排組合成面向數學研究的形式化證明系統。]]></description>
+</item>
+<item>
+<title><![CDATA[向 LangChain 學習：如何為業務級 Agent 提供可靠性的執行時]]></title>
+<link>https://luhuidev.com/zh-tw/essays/langchain-agent-runtime-production-reliability</link>
+<guid>https://luhuidev.com/zh-tw/essays/langchain-agent-runtime-production-reliability</guid>
+<pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[借 LangChain Runtime 的設計，拆解業務級 Agent 的 Durable Execution、狀態分層、Human-in-the-loop、權限模型、Middleware、Streaming、Observability 與運維擴展，給出一份可直接落地的 Agent Runtime 設計清單。]]></description>
+</item>
+<item>
+<title><![CDATA[Anthropic Managed Agents 架構拆解：2026 Agent Harness 生產化設計]]></title>
+<link>https://luhuidev.com/zh-tw/essays/anthropic-2026-agent-harness-managed-agents</link>
+<guid>https://luhuidev.com/zh-tw/essays/anthropic-2026-agent-harness-managed-agents</guid>
+<pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 Anthropic Managed Agents 的 Session、Harness、Sandbox、Credential、Context Builder、Trace 與 Eval，說明 Agent Harness 如何演進為生產級 AI Agent Runtime。]]></description>
+</item>
+<item>
+<title><![CDATA[AHE 深度解析：Coding Agent 的 Harness 如何自動演化]]></title>
+<link>https://luhuidev.com/zh-tw/essays/agentic-harness-engineering-coding-agent-harness-evolution</link>
+<guid>https://luhuidev.com/zh-tw/essays/agentic-harness-engineering-coding-agent-harness-evolution</guid>
+<pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[AHE 論文深度解析，介紹 coding agent harness 如何透過可觀測性、檔案化改動、評測和回滾實現自動演化。]]></description>
+</item>
+<item>
+<title><![CDATA[DSPy 教學：為什麼 Signature 比直接寫 Prompt 更容易做自動優化]]></title>
+<link>https://luhuidev.com/zh-tw/essays/why-dspy-signatures-are-easier-to-optimize-than-prompts</link>
+<guid>https://luhuidev.com/zh-tw/essays/why-dspy-signatures-are-easier-to-optimize-than-prompts</guid>
+<pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[面向中文開發者拆解 DSPy 的 Signature、Module 與 Optimizer，說明為什麼 DSPy 比直接寫 Prompt 更容易做自動優化，適合關注提示詞工程、LLM 工作流程、AI 內容生成與教育 AI 的團隊。]]></description>
+</item>
+<item>
+<title><![CDATA[PaperBanana 拆解：AI 多 Agent 如何生成學術方法圖]]></title>
+<link>https://luhuidev.com/zh-tw/essays/paperbanana-ai-academic-method-figure-collaboration</link>
+<guid>https://luhuidev.com/zh-tw/essays/paperbanana-ai-academic-method-figure-collaboration</guid>
+<pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 PaperBanana 的 Retriever、Planner、Stylist、Visualizer 與 Critic 五個 Agent，系統梳理 AI 如何協作生成學術方法圖，適合關注論文配圖、學術寫作與科研工作流的繁中讀者。]]></description>
+</item>
+<item>
+<title><![CDATA[如何透過多 Agent 分工完成學術繪圖？機制拆解]]></title>
+<link>https://luhuidev.com/zh-tw/essays/paperbanana-academic-figure-multi-agent-roles-mechanism</link>
+<guid>https://luhuidev.com/zh-tw/essays/paperbanana-academic-figure-multi-agent-roles-mechanism</guid>
+<pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 PaperBanana 學術繪圖流程中的多 Agent 分工機制，聚焦 Retriever、Planner、Stylist、Visualizer 與 Critic 如何協作生成論文方法圖。]]></description>
+</item>
+<item>
+<title><![CDATA[AlphaGeometry DSL 教程：Google 幾何構造語言、defs.txt 與 Predicate 詳解]]></title>
+<link>https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide</link>
+<guid>https://luhuidev.com/zh-tw/essays/google-alphageometry-dsl-guide</guid>
+<pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[系統拆解 AlphaGeometry DSL 的問題格式、defs.txt action 定義、predicate 語義、rules.txt 推理規則與構造流程，適合用於幾何求解器、資料生成與 AlphaGeometry 復現。]]></description>
+</item>
+<item>
+<title><![CDATA[AlphaGeometry2 深度解析：Google AI 如何解決 IMO 幾何題？]]></title>
+<link>https://luhuidev.com/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems</link>
+<guid>https://luhuidev.com/zh-tw/essays/alphageometry2-google-ai-solve-imo-geometry-problems</guid>
+<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[拆解 AlphaGeometry2 如何把幾何推理、輔助線搜尋與符號證明結合起來解決 IMO 幾何題，並整理對數學 AI 工程的啟發。]]></description>
+</item>
+<item>
+<title><![CDATA[Google DeepMind Aletheia：完全自主研究的數學 Agent 解讀]]></title>
+<link>https://luhuidev.com/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent</link>
+<guid>https://luhuidev.com/zh-tw/essays/google-deepmind-aletheia-autonomous-math-research-agent</guid>
+<pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從 AlphaGo 到 AlphaGeometry、AlphaProof，再到 Aletheia，拆解可驗證數學研究閉環的工程價值。]]></description>
+</item>
+<item>
+<title><![CDATA[HKU CodePlot-CoT 深度解析：視覺推理還是幾何推理？]]></title>
+<link>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/zh-tw/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從可執行繪圖到幾何證明，分析 CodePlot-CoT 的優勢與結構性邊界。]]></description>
+</item>
+<item>
+<title><![CDATA[AI 與數學的融合：技術路徑、應用前沿與未來展望（2026 版）]]></title>
+<link>https://luhuidev.com/zh-tw/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</link>
+<guid>https://luhuidev.com/zh-tw/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</guid>
+<pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[從基準可信度、模型能力分層到架構型數學系統，梳理 AI for Math 在 2026 年的關鍵進展與產品機會。]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Luhui Dev (es)</title>
+<link>https://luhuidev.com/es</link>
+<description>Essays on AI systems for structured thinking</description>
+<item>
+<title><![CDATA[Que es Loopcraft: de Prompt Engineering al diseno de sistemas Agent Loop]]></title>
+<link>https://luhuidev.com/es/essays/prompt-engineering-loopcraft-agent-loops</link>
+<guid>https://luhuidev.com/es/essays/prompt-engineering-loopcraft-agent-loops</guid>
+<pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Guia practica de Loopcraft: por que la ingenieria de AI agents esta pasando de optimizar prompts aislados a disenar loops con eventos, verificacion, reintentos, estado y mejora continua.]]></description>
+</item>
+<item>
+<title><![CDATA[Notas de campo: cómo Agentic RAG enfrenta el caos real de los datos empresariales]]></title>
+<link>https://luhuidev.com/es/essays/agentic-rag-enterprise-data-real-world-messiness</link>
+<guid>https://luhuidev.com/es/essays/agentic-rag-enterprise-data-real-world-messiness</guid>
+<pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[A partir de un caso real de un ticket de soporte, este artículo desglosa las cinco etapas de Agentic RAG -- orquestación, reescritura de consultas, recuperación paralela, verificación de suficiencia y síntesis -- y aborda los límites de permisos entre sistemas junto con tres decisiones de ingeniería sobre enrutamiento, profundidad de iteración y latencia.]]></description>
+</item>
+<item>
+<title><![CDATA[Claude Code: tres incidentes de Anthropic y las lecciones para la ingenieria de agentes]]></title>
+<link>https://luhuidev.com/es/essays/anthropic-claude-code-production-incidents-agent-lessons</link>
+<guid>https://luhuidev.com/es/essays/anthropic-claude-code-production-incidents-agent-lessons</guid>
+<pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Analisis practico de tres incidentes de produccion de Anthropic Claude Code: historial de razonamiento, system prompts, cache, configuraciones por defecto y pruebas reales para AI Agents.]]></description>
+</item>
+<item>
+<title><![CDATA[DeepMind AlphaProof Nexus explicado: 4 paradigmas de sistema para la investigación matemática con IA]]></title>
+<link>https://luhuidev.com/es/essays/ai-driven-formal-proof-search-alphaproof-nexus</link>
+<guid>https://luhuidev.com/es/essays/ai-driven-formal-proof-search-alphaproof-nexus</guid>
+<pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Un análisis de cómo DeepMind AlphaProof Nexus combina LLMs, Lean, AlphaProof, búsqueda evolutiva y orquestación multiagente en un sistema de pruebas formales para investigación matemática.]]></description>
+</item>
+<item>
+<title><![CDATA[Lecciones de LangChain: diseñar un Runtime fiable para agentes de IA en producción]]></title>
+<link>https://luhuidev.com/es/essays/langchain-agent-runtime-production-reliability</link>
+<guid>https://luhuidev.com/es/essays/langchain-agent-runtime-production-reliability</guid>
+<pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Análisis práctico del Runtime de LangChain para deep agents en producción: ejecución durable, estado por capas, human-in-the-loop, permisos, middleware, streaming, observabilidad y una lista de diseño concreta para Agent Runtimes de nivel empresarial.]]></description>
+</item>
+<item>
+<title><![CDATA[Anthropic Managed Agents: arquitectura Agent Harness 2026 para agentes de IA en producción]]></title>
+<link>https://luhuidev.com/es/essays/anthropic-2026-agent-harness-managed-agents</link>
+<guid>https://luhuidev.com/es/essays/anthropic-2026-agent-harness-managed-agents</guid>
+<pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Desglose práctico de Anthropic Managed Agents: arquitectura de agent harness, sesiones, sandboxes, credenciales, context builders, trazas, evaluaciones y patrones de runtime para agentes de IA en producción.]]></description>
+</item>
+<item>
+<title><![CDATA[Agentic Harness Engineering (AHE): como evolucionan los harnesses de coding agents]]></title>
+<link>https://luhuidev.com/es/essays/agentic-harness-engineering-coding-agent-harness-evolution</link>
+<guid>https://luhuidev.com/es/essays/agentic-harness-engineering-coding-agent-harness-evolution</guid>
+<pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Guia practica de Agentic Harness Engineering, coding agent harness, observabilidad de agents, middleware, memory, evaluacion y rollback para equipos de AI engineering.]]></description>
+</item>
+<item>
+<title><![CDATA[DSPy tutorial: por que las signatures son mas faciles de optimizar que los prompts directos]]></title>
+<link>https://luhuidev.com/es/essays/why-dspy-signatures-are-easier-to-optimize-than-prompts</link>
+<guid>https://luhuidev.com/es/essays/why-dspy-signatures-are-easier-to-optimize-than-prompts</guid>
+<pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Una guia practica de DSPy para equipos tecnicos en Norteamerica. Explica como DSPy Signatures, Modules y Optimizers mejoran el prompt engineering, la optimizacion de prompts y los pipelines con LLM para workflows de IA en produccion.]]></description>
+</item>
+<item>
+<title><![CDATA[PaperBanana explicado: como la IA multiagente genera diagramas metodologicos academicos]]></title>
+<link>https://luhuidev.com/es/essays/paperbanana-ai-academic-method-figure-collaboration</link>
+<guid>https://luhuidev.com/es/essays/paperbanana-ai-academic-method-figure-collaboration</guid>
+<pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Un analisis tecnico de los agentes Retriever, Planner, Stylist, Visualizer y Critic de PaperBanana, que muestra como la IA multiagente genera diagramas metodologicos academicos para escritura de investigacion y flujos de trabajo de figuras cientificas.]]></description>
+</item>
+<item>
+<title><![CDATA[Como coordina PaperBanana multiples agentes para crear figuras academicas?]]></title>
+<link>https://luhuidev.com/es/essays/paperbanana-academic-figure-multi-agent-roles-mechanism</link>
+<guid>https://luhuidev.com/es/essays/paperbanana-academic-figure-multi-agent-roles-mechanism</guid>
+<pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Un analisis de como PaperBanana coordina los agentes Retriever, Planner, Stylist, Visualizer y Critic para generar diagramas metodologicos academicos.]]></description>
+</item>
+<item>
+<title><![CDATA[Guia de AlphaGeometry DSL: DSL geometrico de Google, acciones en defs.txt y predicados]]></title>
+<link>https://luhuidev.com/es/essays/google-alphageometry-dsl-guide</link>
+<guid>https://luhuidev.com/es/essays/google-alphageometry-dsl-guide</guid>
+<pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Una guia tecnica de AlphaGeometry DSL que explica el formato de problemas, las acciones en defs.txt, los predicados geometricos, las reglas en rules.txt y el flujo de construccion para solvers geometricos, generacion de datos y reproduccion de AlphaGeometry.]]></description>
+</item>
+<item>
+<title><![CDATA[AlphaGeometry2 en profundidad: como Google AI resuelve problemas de geometria de la IMO?]]></title>
+<link>https://luhuidev.com/es/essays/alphageometry2-google-ai-solve-imo-geometry-problems</link>
+<guid>https://luhuidev.com/es/essays/alphageometry2-google-ai-solve-imo-geometry-problems</guid>
+<pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Como AlphaGeometry2 combina razonamiento geometrico, busqueda de lineas auxiliares y deduccion simbolica para resolver problemas de geometria de la IMO, con aprendizajes de ingenieria para crear math AI.]]></description>
+</item>
+<item>
+<title><![CDATA[Google DeepMind Aletheia: un análisis profundo de un agente de investigación matemática totalmente autónomo]]></title>
+<link>https://luhuidev.com/es/essays/google-deepmind-aletheia-autonomous-math-research-agent</link>
+<guid>https://luhuidev.com/es/essays/google-deepmind-aletheia-autonomous-math-research-agent</guid>
+<pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[De AlphaGo a AlphaGeometry, AlphaProof y Aletheia, este ensayo explica el valor ingenieril de un bucle verificable de investigación matemática autónoma.]]></description>
+</item>
+<item>
+<title><![CDATA[HKU CodePlot-CoT en profundidad: razonamiento visual o razonamiento geométrico]]></title>
+<link>https://luhuidev.com/es/essays/hku-codeplot-cot-visual-or-geometric-reasoning</link>
+<guid>https://luhuidev.com/es/essays/hku-codeplot-cot-visual-or-geometric-reasoning</guid>
+<pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Del trazado ejecutable a la prueba geométrica: análisis estructural de las ventajas y límites de CodePlot-CoT.]]></description>
+</item>
+<item>
+<title><![CDATA[IA y matemáticas: rutas técnicas, frontera de aplicaciones y perspectivas futuras (2026)]]></title>
+<link>https://luhuidev.com/es/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</link>
+<guid>https://luhuidev.com/es/essays/ai-and-math-technology-path-frontier-applications-future-outlook-2026</guid>
+<pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+<description><![CDATA[Una visión de 2026 sobre AI for Math, desde la credibilidad de los benchmarks y los niveles de capacidad hasta los sistemas de resolución basados en arquitectura.]]></description>
+</item>
+</channel>
+</rss>
