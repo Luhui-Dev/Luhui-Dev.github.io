@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+.ui-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow:
+    15px 0 0 color-mix(in oklab, var(--ink) 65%, transparent),
+    30px 0 0 color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+.ui-pill {
+  font-size: 0.78rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 32%, var(--line));
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 700;
+}
+
+.ui-shell {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.ui-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--surface) 92%, white);
+}
