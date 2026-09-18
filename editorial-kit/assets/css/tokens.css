@@ -1,0 +1,118 @@
+:root {
+  --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", "Times New Roman", serif;
+
+  --bg: #f3f5f0;
+  --paper: var(--bg);
+  --surface: #fbfcf8;
+  --card: var(--surface);
+
+  --text: #161d19;
+  --ink: var(--text);
+  --muted: #5f6d64;
+
+  --line: #d3d9cc;
+  --line-strong: #b9d9c6;
+
+  --accent: #2b7d56;
+  --accent-soft: #e7f5ec;
+
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 22px;
+  --radius: var(--radius-md);
+
+  --shadow-soft: 0 12px 28px rgba(18, 36, 26, 0.08);
+  --shadow-lift: 0 10px 18px rgba(22, 56, 36, 0.08);
+  --shadow: var(--shadow-soft);
+
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="classic-blue"] {
+  --bg: #f6f4ef;
+  --paper: var(--bg);
+  --surface: #fcfbf8;
+  --card: var(--surface);
+  --text: #181a1f;
+  --ink: var(--text);
+  --muted: #646a77;
+  --line: #d8d4ca;
+  --line-strong: #c3d2f9;
+  --accent: #1a58d9;
+  --accent-soft: #ebf1ff;
+}
+
+[data-theme="graphite-cyan"] {
+  --bg: #f2f5f7;
+  --paper: var(--bg);
+  --surface: #f9fcfd;
+  --card: var(--surface);
+  --text: #111a1f;
+  --ink: var(--text);
+  --muted: #5f7078;
+  --line: #cfd9dd;
+  --line-strong: #b1d8e4;
+  --accent: #0f7f9c;
+  --accent-soft: #e4f5fa;
+}
+
+[data-theme="forest-mint"] {
+  --bg: #f3f5f0;
+  --paper: var(--bg);
+  --surface: #fbfcf8;
+  --card: var(--surface);
+  --text: #161d19;
+  --ink: var(--text);
+  --muted: #5f6d64;
+  --line: #d3d9cc;
+  --line-strong: #b9d9c6;
+  --accent: #2b7d56;
+  --accent-soft: #e7f5ec;
+}
+
+[data-theme="amber-slate"] {
+  --bg: #f7f3ec;
+  --paper: var(--bg);
+  --surface: #fdfbf6;
+  --card: var(--surface);
+  --text: #1f1b16;
+  --ink: var(--text);
+  --muted: #726658;
+  --line: #ddd2c3;
+  --line-strong: #e5c9a8;
+  --accent: #b0681f;
+  --accent-soft: #f9ecdd;
+}
+
+[data-theme="indigo-rose"] {
+  --bg: #f5f3f7;
+  --paper: var(--bg);
+  --surface: #fcfbfd;
+  --card: var(--surface);
+  --text: #191720;
+  --ink: var(--text);
+  --muted: #6c6377;
+  --line: #d9d3df;
+  --line-strong: #d3c2f3;
+  --accent: #6a54c8;
+  --accent-soft: #efeafd;
+}
+
+[data-theme="navy-coral"] {
+  --bg: #f5f2ef;
+  --paper: var(--bg);
+  --surface: #fcfbf9;
+  --card: var(--surface);
+  --text: #151c27;
+  --ink: var(--text);
+  --muted: #676e7b;
+  --line: #dbd3cb;
+  --line-strong: #f0b7aa;
+  --accent: #db5b3b;
+  --accent-soft: #fdebe7;
+}
